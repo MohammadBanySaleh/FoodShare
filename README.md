@@ -1,4 +1,17 @@
-# cahrity
+# FoodShare
+
+#Description:
+FoodShare is a compassionate online platform dedicated to reducing food waste and alleviating hunger. Our user-friendly website connects individuals, restaurants, and businesses with surplus food to those in need. We facilitate seamless food donations, fostering a sense of community and sustainability. Join us in the mission to make a positive impact on food insecurity and create a more equitable world.
+
+#Team_Member:
+Salam Tamimi
+Marah Abusaleh
+Abeda Jarrah
+Raghad Taha
+Mohammad Bany Saleh
+Mohammad As'ad
+
+
 #Trellolink:
 https://trello.com/b/qmTQ9D0e/charity-website
 
