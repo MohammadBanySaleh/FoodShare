@@ -14,8 +14,8 @@
                     <div class="col-lg-6 col-12">
                         <div class="news-block">
                             <div class="news-block-top">
-                                <img src="{{ asset('images/single.jpg') }}"
-                                    class="news-image img-fluid col-lg-12" >
+                                <img src="{{ asset($singleDonation->image) }}"
+                                    class="news-image img-fluid col-lg-12" style="max-height: 400px" >
 
                                 <div class="news-category-block">
                                     <a href="#" class="category-block-link">
@@ -49,13 +49,13 @@
                 <br><br>
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="plans"><img src="{{ asset($singleDonation->image) }}" style="height: 45px; width: 45px;"><br>
+                        <div class="plans"><img src="{{ asset('images/fooddonate.png') }}" style="height: 45px; width: 45px;"><br>
                             <h6 class="pt-2"><a href="{{ route('things.show', ['id' => $singleDonation->id]) }}" target="_blank"><span style="color:#5c5c5c;"><strong>Food Donation </strong></span></a></h6>
                         </div>
                         {{-- Auth()->user()->id --}}
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="plans"><img src="{{ asset($singleDonation->image) }}" style="height: 45px; width: 45px;"><br>
+                        <div class="plans"><img src="{{ asset('images/moneydonate.png') }}" style="height: 45px; width: 45px;"><br>
                             <h6 class="pt-2"><a href="{{ route('money.show', ['id' => $singleDonation->id]) }}" target="_blank"><span style="color:#5c5c5c;"><strong>Money Donation </strong></span></a></h6>
                         </div>
                     </div>

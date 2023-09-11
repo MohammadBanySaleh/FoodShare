@@ -38,8 +38,7 @@
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="images/slide/3.jpg"
-                                        class="carousel-image img-fluid" alt="...">
+                                    <img src="images/slide/3.jpg" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>Humanity</h1>
@@ -73,7 +72,7 @@
                 <div class="row">
 
                     <div class="col-lg-10 col-12 text-center mx-auto">
-                        <h2 class="mb-5">Welcome to Kind Heart Charity</h2>
+                        <h2 class="mb-5">Welcome to FoodSHare</h2>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
@@ -162,7 +161,7 @@
                             class="custom-text-box-image img-fluid" alt="">
                     </div > --}}
 
-                    <div class="col-lg-6 col-12 mb-lg-0" style="margin-top:8%">
+                    <div class="col-lg-6 col-12 mb-lg-0" style="margin-top:5%">
                         <section class="hero hero-section container">
                             <div>
                                 <video autoplay loop muted plays-inline style="width: 100%;">
@@ -180,35 +179,25 @@
                         <div class="custom-text-box">
                             <h2 class="mb-2">Our Story</h2>
 
-                            <h5 class="mb-3">Kind Heart Charity, Non-Profit Organization</h5>
+                            <h5 class="mb-3">FoodSHare, Non-Profit Organization</h5>
 
-                            <p class="mb-0">This is a Bootstrap 5.2.2 CSS template for charity organization websites.
-                                You can feel free to use it. Please tell your friends about TemplateMo website. Thank
-                                you.</p>
+                            <p class="mb-0">At FoodSHare we save good quality, surplus food from going to waste. If you
+                                find that you have surplus food which is still edible, consider redistributing it to people
+                                in need.</p>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
+                            <div class="col-lg-12 col-md-6 col-12">
                                 <div class="custom-text-box mb-lg-0">
                                     <h5 class="mb-3">Our Mission</h5>
 
-                                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
+                                    <p>Our mission is to ensure that everyone has access to healthy and nutritious food.</p>
 
-                                    <ul class="custom-list mt-2">
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Charity Theme
-                                        </li>
-
-                                        <li class="custom-list-item d-flex">
-                                            <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Semantic HTML
-                                        </li>
-                                    </ul>
+                                
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-md-6 col-12">
+                            {{-- <div class="col-lg-6 col-md-6 col-12">
                                 <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
                                     <div class="counter-thumb">
                                         <div class="d-flex">
@@ -230,7 +219,7 @@
                                         <span class="counter-text">Donations</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
@@ -309,7 +298,7 @@
                     <div class="col-lg-5 col-12">
                         <a href="#causes" class="me-4">Make a donation</a>
 
-                        <a href="#section_4" class="custom-btn btn smoothscroll">Become a volunteer</a>
+                        <a href="#becomeVol" class="custom-btn btn smoothscroll">Become a volunteer</a>
                     </div>
 
                 </div>

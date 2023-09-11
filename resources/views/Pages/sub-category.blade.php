@@ -32,7 +32,7 @@
                   <h5>
                     {{ $donation->name }}
                   </h5>
-                  <p>
+                  <p style="color: white">
                     {{ $donation->description }}
                   </p>
                   <div class="options d-flex justify-around">

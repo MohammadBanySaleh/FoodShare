@@ -17,6 +17,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\VolanteerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\CustomAuthController;
 
 
 use App\Models\UserDonation;
@@ -93,7 +94,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/welcome-dashboard', function () {
     return view('welcome-dashboard');
-})->name('dashboard.welcome-dashboard');
+})->middleware('adminMiddleWare')->name('dashboard.welcome-dashboard');
 
 Route::get('/dashboard_login', function () {
     return view('dashboard.dashboard_login');
@@ -155,3 +156,7 @@ Route::get('auth/facebook', [FacebookController::class, 'facebookPage'])->name('
 Route::get('auth/facebook/callback', [FacebookController::class, 'facebookredirect']);
 
 Route::get('/certificate/download', [UserProfileController::class,'download'])->name('certificate.download');
+
+Route::post('dashboard_login', [CustomAuthController::class, 'loginUser'])->name('dashlog');
+Route::get('dashboard_logout', [CustomAuthController::class, 'logout']);
+// Route::post('dashboard_logout', [CustomAuthController::class, 'logout'])->name('logout');

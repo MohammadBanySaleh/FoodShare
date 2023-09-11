@@ -81,12 +81,13 @@ Volunteers list
                     onclick="return confirm('Are you sure you want to delete this volanteer?')">Delete</button>
                   </form>
               </td>
-                @endforeach
+                
                 @php
                   $i++;
                 @endphp
 
                 </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
