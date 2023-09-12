@@ -120,29 +120,34 @@
     </x-slot> --}}
         {{-- @extends('layout.master') --}}
         {{-- @section('content') --}}
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.update-profile-information-form')
+        <br><br><br>
+        <div class="py-12 container">
+            <div class="max-w-7xl mx-auto row">
+                <div class="col-md-6" > <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
+                    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg" style="height: 417px !important;">
+                        <div class="max-w-xl">
+                            @include('profile.partials.update-profile-information-form')
+                        </div>
                     </div>
                 </div>
-                <hr>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.update-password-form')
+                <div class="col-md-6"> <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
+                    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                        <div class="max-w-xl">
+                            @include('profile.partials.update-password-form')
+                        </div>
                     </div>
                 </div>
-                <hr>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.delete-user-form')
+                <div class="col-md-12"> <!-- This div will take up 12 columns (full width) on medium-sized screens and larger -->
+                    <hr>
+                    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                        <div class="max-w-xl">
+                            @include('profile.partials.delete-user-form')
+                        </div>
                     </div>
                 </div>
             </div>
-        </div><br><br><br><br><br>
+        </div>
+        <br><br><br><br><br>
 
 
         <footer class="site-footer">

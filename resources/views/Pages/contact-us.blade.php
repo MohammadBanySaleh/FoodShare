@@ -23,14 +23,14 @@
 
                             <p class="d-flex mb-2">
                                 <i class="bi-geo-alt me-2"></i>
-                                Akershusstranda 20, 0150 Oslo, Norway
+                                Irbid 20, 0150 Irbid, Jordan
                             </p>
 
                             <p class="d-flex mb-2">
                                 <i class="bi-telephone me-2"></i>
 
                                 <a href="tel: 305-240-9671">
-                                    305-240-9671
+                                    00962 78 900 4764
                                 </a>
                             </p>
 
@@ -38,7 +38,7 @@
                                 <i class="bi-envelope me-2"></i>
 
                                 <a href="mailto:info@yourgmail.com">
-                                    donate@charity.org
+                                    foodshare@charity.org
                                 </a>
                             </p>
 

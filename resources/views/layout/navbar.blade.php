@@ -38,7 +38,7 @@
                 <img src="{{ asset('images/logo.png') }}" class="logo img-fluid" alt="Kind Heart Charity">
                 <span>
                     FoodSHare
-                    <small>Non-profit Organization</small>
+                    <small style="font-size: 12px">Non-profit Organization</small>
                 </span>
             </a>
 
@@ -50,19 +50,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link click-scroll" href="{{ url('/') }}" style="font-size: 20px;">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="{{ url('/#ourStory') }}">About</a>
+                        <a class="nav-link click-scroll" href="{{ url('/#ourStory') }}" style="font-size: 20px;">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="{{ url('/#becomeVol') }}">Volunteer</a>
+                        <a class="nav-link click-scroll" href="{{ url('/#becomeVol') }}" style="font-size: 20px;">Volunteer</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="{{ url('contact-us') }}">Contact</a>
+                        <a class="nav-link click-scroll" href="{{ url('contact-us') }}" style="font-size: 20px;">Contact</a>
                     </li>
                     @if (auth()->check())
                         {{-- <li class="nav-item ms-3">
