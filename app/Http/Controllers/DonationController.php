@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Donation;
+use App\Models\MenuItem;
 use App\Models\User;
 use App\Models\UserDonation;
 use Illuminate\Http\Request;
@@ -117,7 +118,6 @@ class DonationController extends Controller
     {
 
         $donations = Donation::where('category_id', $id)->paginate(6);
-        // $category = Donation::where('category_id', $id)->first();
         return view('pages/sub-category', compact('donations'));
     }
 

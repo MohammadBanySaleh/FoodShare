@@ -3,8 +3,19 @@
 @endif
 @extends('Layout.master')
 @section('content')
-
-
+<ul>
+    <a href="{{ url('/') }}">Home /</a>
+    <a href="{{ URL::current() }}">
+      @php $categoryNameDisplayed = false; @endphp
+    
+      @foreach ($donations as $donation)
+          @if (!$categoryNameDisplayed)
+              {{ $donation->category->name }}
+              @php $categoryNameDisplayed = true; @endphp
+          @endif
+      @endforeach 
+    </a>
+    </ul>
     <main>
 
         <section class="news-section section-padding">
