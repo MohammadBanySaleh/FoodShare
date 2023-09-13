@@ -16,9 +16,9 @@
                             <h3 class="mb-4">Make a donation</h3>
                             <div class="d-flex px-10">
                                 <div class="col-lg-6">
-                                    <img src="{{ asset($donations->image) }}" alt="" width="200px">
+                                    <img src="{{ asset($donations->image) }}" alt="" width="150px">
                                 </div>
-                                <div class="col-lg-6 mt-5">
+                                <div class="col-lg-6">
                                     <p>Donation name:  {{ $donations->name }}</p>
                                     <p>Donation amount:  {{ $donations->price }} $</p>
                                     <p>{{ $donations->description }}</p>
