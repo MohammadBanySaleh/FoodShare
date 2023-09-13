@@ -22,7 +22,8 @@
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>be a Kind Heart</h1>
 
-                                        <p>Professional charity theme based on Bootstrap 5.2.2</p>
+                                        <p>You can help turn hunger into hope!
+                                        </p>
                                     </div>
                                 </div>
 
@@ -90,7 +91,7 @@
                             <a href="#ourStory" class="d-block">
                                 <img src="images/icons/heart.png" class="featured-block-image img-fluid" alt="">
 
-                                <p class="featured-block-text"><strong>Our</strong> Story</p>
+                                <p class="featured-block-text">Our<strong> Story </strong></p>
                             </a>
                         </div>
                     </div>
@@ -125,7 +126,7 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-12 text-center mb-4" id="causes">
-                        <h2>Our Causes</h2>
+                        <h2>Our Programs</h2>
                     </div>
                     @foreach ($categories as $item)
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 ">
@@ -193,7 +194,7 @@
 
                                     <p>Our mission is to ensure that everyone has access to healthy and nutritious food.</p>
 
-                                
+
                                 </div>
                             </div>
 

@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label for="password"><i class="zmdi zmdi-lock" :value="__('Password')"></i></label>
                             <input type="password" id="password" placeholder="Password" name="password"  />
-                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                          <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
                         {{-- end password --}}
                         {{-- start c password --}}
