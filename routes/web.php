@@ -17,6 +17,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\VolanteerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\CustomAuthController;
 
 
