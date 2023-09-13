@@ -49,7 +49,7 @@ class VolanteerController extends Controller
     
         Volanteer::create($validatedData);
     
-        return redirect()->route('volanteers.index');
+        return redirect()->route('volanteers.index')->with('success', 'Volanteer created successfully');
     }
 
     /**

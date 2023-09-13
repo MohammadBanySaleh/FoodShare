@@ -16,7 +16,9 @@ class UserDonationController extends Controller
      */
     public function index()
     {
-        return view('dashboard.user-donations.index');
+        $userDonation=UserDonation::get();
+
+        return view('dashboard.user-donations.index',compact('userDonation'));
     }
 
     /**

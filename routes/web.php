@@ -92,9 +92,9 @@ Route::middleware('auth')->group(function () {
 // require __DIR__.'/auth.php';
 
 
-Route::get('/welcome-dashboard', function () {
-    return view('welcome-dashboard');
-})->middleware('adminMiddleWare')->name('dashboard.welcome-dashboard');
+// Route::get('/welcome-dashboard', function () {
+//     return view('welcome-dashboard');
+// })->middleware('adminMiddleWare')->name('welcome-dashboard');
 
 Route::get('/dashboard_login', function () {
     return view('dashboard.dashboard_login');
@@ -157,6 +157,11 @@ Route::get('auth/facebook/callback', [FacebookController::class, 'facebookredire
 
 Route::get('/certificate/download', [UserProfileController::class,'download'])->name('certificate.download');
 
-Route::post('dashboard_login', [CustomAuthController::class, 'loginUser'])->name('dashlog');
+Route::post('welcome/dashboard', [CustomAuthController::class, 'loginUser'])->name('dashlog');
+// Route::get('welcomedashboard', [CustomAuthController::class, 'loginUser']);
+
+Route::get('main/dashboard', [CustomAuthController::class, 'sidebar'])->middleware('adminMiddleWare');
+// Route::get('welcomedashboard', [CustomAuthController::class, 'loginUser']);
 Route::get('dashboard_logout', [CustomAuthController::class, 'logout']);
 // Route::post('dashboard_logout', [CustomAuthController::class, 'logout'])->name('logout');
+

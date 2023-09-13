@@ -52,7 +52,7 @@ class PartnerController extends Controller
             'image' => $relativeImagePath,
         ]);
     
-        return redirect()->route('partners.index');
+        return redirect()->route('partners.index')->with('success', 'Partner created successfully');
     }
 
     /**

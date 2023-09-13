@@ -44,7 +44,7 @@ Edit Donation
         </div>
         <div class="form-group">
             <label for="image">Donation Image:</label>
-            <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror">
+            <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror" width="100px" height="100px">
             @error('image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

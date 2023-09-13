@@ -25,6 +25,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <div> @if(session()->has('success'))
+                        <div class="alert alert-success">
+                          <button type="button" class="close" data-dismiss="alert">x</button>
+                        {{session()->get('success') }}
+                        @endif
+                      </div>
                     <div class="card">
                         <div class="card-header">
                             <!-- Add a link to create a new user -->
@@ -56,35 +62,29 @@
                                             <td>{{ $donation->category?->name }}</td>
                                             <td>{{ $donation->name }}</td>
                                             <td>{{ $donation->description }}</td>
-                                            <td><img src="{{ asset($donation->image) }}" alt="" width="100px"></td>
+                                            <td><img src="{{ asset($donation->image) }}" alt="" width="100px" height="100px"></td>
                                             <td>{{ $donation->price }}</td>
 
-                                            <td class="project-actions ">
-                                                {{-- <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        View
-                    </a> --}}
-                                                <a class="btn btn-info btn-sm"
-                                                    href="{{ route('donations.edit', $donation->id) }}">
-                                                    <i class="fas fa-pencil-alt">
-                                                    </i>
-                                                    Edit
-                                                </a>
-                                                {{-- <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Delete
-                    </a> --}}
-
-                                                <form action="{{ route('donations.destroy', $donation->id) }}"
-                                                    method="POST" style="display: inline;">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Are you sure you want to delete this donation?')">Delete</button>
-                                                </form>
+                                            <td class="project-actions">
+                                                <div style="margin-bottom: 5px;">
+                                                    <a class="btn btn-info btn-sm" href="{{ route('donations.edit', $donation->id) }}" style="width: 100%;">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            
+                                                <div style="margin-bottom: 5px;">
+                                                    <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" style="display: inline;">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this donation?')" style="width: 100%;">
+                                                            <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
+                                            
 
                                             @php
                                                 $i++;
