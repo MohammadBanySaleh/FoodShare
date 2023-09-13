@@ -645,6 +645,10 @@ strong {
   transition: all 0.5s ease;
   min-height: 256px;
   padding: 15px;
+
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
 .featured-block:hover {
@@ -661,6 +665,8 @@ strong {
   display: block;
   margin: auto;
   transition: all 0.5s;
+
+  
 }
 
 .featured-block:hover .featured-block-text {
@@ -1711,7 +1717,7 @@ blockquote::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 215px;
+  height: 270px;
   border-radius: 0 0 0 45px;
   margin: -1px;
   /* padding: 25px; */

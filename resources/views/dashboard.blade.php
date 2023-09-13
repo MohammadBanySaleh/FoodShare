@@ -127,39 +127,49 @@ use App\Models\UserDonation;
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <div class="container">
-                        {{-- <h1>Donations for {{ auth()->user()->name }}</h1> --}}
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="padding: 20px">NAME</th>
-                                    <th style="padding: 20px">description</th>
-                                    <th style="padding: 20px">price</th>
-                                    <th style="padding: 20px">quantity</th>
-                                    {{-- <th style="padding: 20px">image</th> --}}
-                                    <!-- Add more columns if needed -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                
-                                $user_id = auth()->user()->id;
-                                $test = UserDonation::where('user_id', $user_id)->get();
-                                ?>
-                                @foreach ($test as $donation)
+                    @php
+                    $count = DB::table('user_donations')->count();
+                    @endphp
+
+                    @if ($count > 0)
+                        <div class="container">
+                            {{-- <h1>Donations for {{ auth()->user()->name }}</h1> --}}
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td>{{ $donation->donation->name }}</td>
-                                        <td>{{ $donation->donation->description }}</td>
-                                        <td>{{ $donation->donation->price }}</td>
-                                        <td>{{ $donation->quantity }}</td>
-                                        {{-- <td>{{ $donation->donation->image }}</td> --}}
+                                        <th style="padding: 20px">NAME</th>
+                                        <th style="padding: 20px">description</th>
+                                        <th style="padding: 20px">price</th>
+                                        <th style="padding: 20px">quantity</th>
+                                        {{-- <th style="padding: 20px">image</th> --}}
                                         <!-- Add more columns if needed -->
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <a href="{{ route('certificate.download') }}" style="background-color: #5bc1ac; border: none;" class="btn btn-primary">Download Your Donation</a>
-                    </div>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    
+                                    $user_id = auth()->user()->id;
+                                    $test = UserDonation::where('user_id', $user_id)->get();
+                                    ?>
+                                    @foreach ($test as $donation)
+                                        <tr>
+                                            <td>{{ $donation->donation->name }}</td>
+                                            <td>{{ $donation->donation->description }}</td>
+                                            <td>{{ $donation->donation->price }}</td>
+                                            <td>{{ $donation->quantity }}</td>
+                                            {{-- <td>{{ $donation->donation->image }}</td> --}}
+                                            <!-- Add more columns if needed -->
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <a href="{{ route('certificate.download') }}" style="background-color: #5bc1ac; border: none;" class="btn btn-primary">Download Your Donation</a>
+                            <br><br>
+                        </div>
+                    @else
+                    <h4 class="text-center" style="color: #5bc1ac">"You don't make anu Donation yet, consider making a contribution!"</h4 class="text-center"><br>
+                    <center><a href="{{ url('/#causes') }}" style="background-color: #5bc1ac; border: none;" class="btn btn-primary">Donate Now</a></center><br>
+                    @endif
                 </div>
             </div>
         </div>

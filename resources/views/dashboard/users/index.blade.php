@@ -25,6 +25,12 @@ Users list
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+          <div> @if(session()->has('success'))
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">x</button>
+            {{session()->get('success') }}
+            @endif
+          </div>
           <div class="card">
             <div class="card-header">
                 <!-- Add a link to create a new user -->
@@ -40,6 +46,7 @@ Users list
                     <th>#</th>
                     <th>user_name</th>
                     <th>user_email</th>
+                    {{-- <th>user_password</th> --}}
                     <th>user_mobile</th>
                     <th>user_address</th>
                     <th>Action</th>
@@ -54,31 +61,15 @@ Users list
                   <td>{{ $i }}</td>
                   <td>{{ $user->name }}</td>
                   <td>{{ $user->email }}</td>
+                  {{-- <td>{{ $user->password }}</td> --}}
                   <td>{{ $user->mobile }} </td>
                   <td>{{ $user->address }}</td>
                   <td class="project-actions ">
-                    {{-- <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        View
-                    </a>
-                    <a class="btn btn-info btn-sm" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Edit
-                    </a> --}}
-                    {{-- <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Delete
-                    </a> --}}
-                    <a class="btn btn-info btn-sm" href="{{ route('users.edit', $user->id) }}">
+                    {{-- <a class="btn btn-info btn-sm" href="{{ route('users.edit', $user->id) }}">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Edit
-                  </a>
-                    
-
+                  </a> --}}
                     <form action="{{route('users.destroy',$user->id)}}"  method="POST"  style="display: inline;">
                       @method('DELETE')
                       @csrf
@@ -88,10 +79,7 @@ Users list
                 </td>
                   @php
                     $i++;
-                  @endphp
-                  
-                  
-                  
+                  @endphp 
                 </tr>
                 @endforeach
                 </tbody>

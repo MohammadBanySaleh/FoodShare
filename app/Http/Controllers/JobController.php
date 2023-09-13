@@ -43,7 +43,7 @@ class JobController extends Controller
     
         Job::create($validatedData);
     
-        return redirect()->route('jobs.index');
+        return redirect()->route('jobs.index')->with('success', 'Job created successfully');
     }
 
     /**
@@ -56,6 +56,7 @@ class JobController extends Controller
     {
         //
     }
+    
 
     /**
      * Show the form for editing the specified resource.

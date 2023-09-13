@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
                // 'confirmed',
                 // Rules\Password::defaults(),
                 'some_field' => ['required', 'regex:/^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/',],
+
             ],
 
         ]);
@@ -48,7 +49,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'mobile' => '0795120790',
             'address' => 'irbid',
-            
+
 
         ]);
 

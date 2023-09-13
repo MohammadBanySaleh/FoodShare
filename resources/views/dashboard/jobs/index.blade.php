@@ -2,16 +2,13 @@
 
 @section('title', 'Show Jobs')
 
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-
 @endsection
 
 @section('title_page1')
-
     Jobs
 @endsection
 
@@ -25,9 +22,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    @if(session()->has('success'))
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            {{ session()->get('success') }}
+                        </div>
+                    @endif
                     <div class="card">
                         <div class="card-header">
-                            <!-- Add a link to create a new user -->
+                            <!-- Add a link to create a new job -->
                             <a class="btn btn-primary btn-sm float-left" href="{{ route('jobs.create') }}">
                                 <i class="fas fa-user-plus"></i> Add New Job
                             </a>
@@ -38,42 +41,35 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Job_name</th>
+                                        <th>Job Name</th>
                                         <th>Action</th>
                                     </tr>
-                                    <tr>
-                                        @php
-                                            $i = 1;
-                                        @endphp
-                                        @foreach ($jobs as $job)
+                                </thead>
+                                <tbody>
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach ($jobs as $job)
+                                        <tr>
                                             <td>{{ $i }}</td>
                                             <td>{{ $job->name }}</td>
-
-
-                                            <td class="project-actions ">
+                                            <td class="project-actions">
                                                 <a class="btn btn-info btn-sm" href="{{ route('jobs.edit', $job->id) }}">
-                                                    <i class="fas fa-pencil-alt">
-                                                    </i>
+                                                    <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
-                                                <form action="{{ route('jobs.destroy', $job->id) }}" method="POST"
-                                                    style="display: inline;">
+                                                <form action="{{ route('jobs.destroy', $job->id) }}" method="POST" style="display: inline;">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Are you sure you want to delete this job?')">Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this job?')">Delete</button>
                                                 </form>
                                             </td>
-
-                                            @php
-                                                $i++;
-                                            @endphp
-
-                                    </tr>
+                                        </tr>
+                                        @php
+                                            $i++;
+                                        @endphp
                                     @endforeach
-                                    </tbody>
-                                <tfoot>
-                                </tfoot>
+                                </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -89,65 +85,20 @@
     <!-- /.content -->
 @endsection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @section('scripts')
-    {{-- <script src="../../plugins/datatables/jquery.dataTables.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}">
-    </script>
-
-    {{-- <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script> --}}
-    <script type="text/javascript"
-        src="{{ URL::asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> --}}
-    <script type="text/javascript"
-        src="{{ URL::asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script> --}}
-    <script type="text/javascript"
-        src="{{ URL::asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script> --}}
-    <script type="text/javascript"
-        src="{{ URL::asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/jszip/jszip.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/jszip/jszip.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/pdfmake/pdfmake.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
-
-    {{-- <script src="../../plugins/pdfmake/vfs_fonts.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
-
-    {{-- <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}">
-    </script>
-
-    {{-- <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}">
-    </script>
-
-    {{-- <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script> --}}
-    <script type="text/javascript" src="{{ URL::asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}">
-    </script>
-
-
+    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    
     <script>
         $(function() {
             $("#example1").DataTable({
@@ -167,5 +118,4 @@
             });
         });
     </script>
-
 @endsection

@@ -24,7 +24,7 @@
                                     <div class="input-group">
                            
 
-                                        <textarea type="text" class="form-control" placeholder="Contents" aria-label="Username"
+                                        <textarea type="text" class="form-control" placeholder="Describe what you have" aria-label="Username"
                                             aria-describedby="basic-addon1" name="description"></textarea>
                                     </div>
                                     @if ($errors->has('description'))

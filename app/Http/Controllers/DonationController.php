@@ -64,7 +64,7 @@ class DonationController extends Controller
             'image' => $relativeImagePath,
         ]);
 
-        return redirect()->route('donations.index');
+        return redirect()->route('donations.index')->with('success', 'Donation created successfully.');
     }
 
     /**

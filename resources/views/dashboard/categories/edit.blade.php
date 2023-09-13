@@ -44,7 +44,7 @@ Edit Category
         </div>
         <div class="form-group">
             <label for="image">Category Image:</label>
-            <input type="file" class="form-control" name="image" value="{{ $categories->image }}">
+            <input type="file" class="form-control" name="image" value="{{ $categories->image }}"  width="100px" height="100px">
             @error('image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

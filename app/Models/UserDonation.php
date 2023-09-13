@@ -15,13 +15,13 @@ class UserDonation extends Model
     //With Donation Model
     public function donation() 
     {
-        return $this->belongsTo(Donation::class);
+        return $this->belongsTo(Donation::class,'donation_id');
     }
 
     //With User Model
     public function user() 
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     //With PaymentDetails Model

@@ -24,7 +24,14 @@ Admins list
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+          <div> @if(session()->has('success'))
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">x</button>
+            {{session()->get('success') }}
+            @endif
+          </div>
           <div class="card">
+           
             <div class="card-header">
                 <!-- Add a link to create a new user -->
                 <a class="btn btn-primary btn-sm float-left" href="{{ route('admins.create') }}">
@@ -55,37 +62,22 @@ Admins list
                   <td>{{ $admin->email }}</td>
                   {{-- <td>{{ $admin->mobile }} </td> --}}
                   {{-- <td>{{ $admin->address }}</td> --}}
-                  <td class="project-actions ">
-                    {{-- <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        View
-                    </a> --}}
-                    {{-- <a class="btn btn-info btn-sm" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Edit
-                    </a> --}}
-                    {{-- <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Delete
-                    </a> --}}
-
+                  <td class="project-actions">
                     <a class="btn btn-info btn-sm" href="{{ route('admins.edit', $admin->id) }}">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Edit
-                  </a>
-                    
-
-                    <form action="{{route('admins.destroy',$admin->id)}}"  method="POST"  style="display: inline;">
-                      @method('DELETE')
-                      @csrf
-                      <button type="submit" class="btn btn-danger btn-sm"
-                      onclick="return confirm('Are you sure you want to delete this admin?')">Delete</button>
+                        <i class="fas fa-pencil-alt"></i>
+                        Edit
+                    </a>
+                
+                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST" style="display: inline;">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this admin?')">
+                            <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
+                            Delete
+                        </button>
                     </form>
                 </td>
+                
                   @php
                     $i++;
                   @endphp
