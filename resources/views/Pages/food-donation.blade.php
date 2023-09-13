@@ -25,6 +25,17 @@
                             @method('post')
                             <input type="hidden" name="donation_id" value="{{ $donations->id }}">
                             <h3 class="mb-4">Make a donation</h3>
+                            <div class="d-flex px-10">
+                                <div class="col-lg-6">
+                                    <img src="{{ asset($donations->image) }}" alt="" width="150px">
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Donation name:  {{ $donations->name }}</p>
+                                    <p>Donation amount:  {{ $donations->price }} $</p>
+                                    <p>{{ $donations->description }}</p>
+                                </div>
+                            </div>
+                            <br>
 
                             <div class="row">
                                 <div class="col-lg-12 col-12">
