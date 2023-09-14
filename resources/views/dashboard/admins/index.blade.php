@@ -44,11 +44,11 @@ Admins list
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>admin_name</th>
+                    <th style="width: 20%">admin_name</th>
                     <th>admin_email</th>
                     {{-- <th>admin_password</th>
                     <th>admin_is_logged_in</th> --}}
-                    <th>Action</th>
+                    <th style="width:30%">Action</th>
                 </tr>
                 </thead>
                 <tbody>

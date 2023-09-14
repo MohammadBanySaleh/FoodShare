@@ -46,7 +46,7 @@
                                         <th>#</th>
                                         <th>category_Name</th>
                                         <th>donation_name</th>
-                                        <th>donation_description</th>
+                                        <th  style="width: 30%">donation_description</th>
                                         <th>donation_price</th>
                                         <th>donation_image</th>
                                         <th>Action</th>

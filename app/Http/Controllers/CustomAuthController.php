@@ -9,6 +9,8 @@ use App\Models\UserDonation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
+
 
 
 
@@ -27,13 +29,17 @@ class CustomAuthController extends Controller
 
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:5|max:20'
+            'password' => [
+                'required',
+                'min:8',
+                'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+            ]
         ]);
         
         $admin = Admin::where('email', $request->email)->first();
         
         if ($admin) {
-            if ($request->password == $admin->password) {
+            if (Hash::check($request->password , $admin->password)) {
                 $request->session()->put('id', $admin->id);
                 $categoryCount = Category::count();
                 $userCount = User::count();

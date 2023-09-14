@@ -41,8 +41,6 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif |max:2048',
-            // Add any desired image validation rules
             'email' => 'required|email',
             'password' => [
                 'required',

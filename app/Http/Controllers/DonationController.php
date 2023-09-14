@@ -49,10 +49,9 @@ class DonationController extends Controller
         $newImageName = uniqid() . '-' . $request->name . '.' . $request->file('image')->extension();
         $relativeImagePath = 'assets/images/' . $newImageName;
         $request->file('image')->move(public_path('assets/images'), $newImageName);
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required',
             'description' => 'required',
-            // 'image' => 'required',
             'price' => 'required',
         ]);
 

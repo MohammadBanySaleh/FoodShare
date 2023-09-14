@@ -1,9 +1,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="{{ asset('assets/img/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">FoodSHare</span>
+  <a href="{{url('/')}}" class="brand-link" style="margin-top: 8px" height="200px" width="">
+    <img src="{{ asset('assets/img/logo.png') }}" href="{{url('/')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity:.8" >
+    <span class="brand-text font-weight-bolder font-size-300px">FoodSHare</span>
   </a>
 
   <!-- Sidebar -->
