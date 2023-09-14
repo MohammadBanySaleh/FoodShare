@@ -6,14 +6,14 @@
 <ul>
     <a href="{{ url('/') }}">Home /</a>
     <a href="{{ URL::current() }}">
-      @php $categoryNameDisplayed = false; @endphp
+      {{-- @php $categoryNameDisplayed = false; @endphp
     
       @foreach ($donations as $donation)
           @if (!$categoryNameDisplayed)
               {{ $donation->category->name }}
               @php $categoryNameDisplayed = true; @endphp
           @endif
-      @endforeach 
+      @endforeach  --}}
     </a>
     </ul>
     <main>
@@ -25,7 +25,7 @@
                     <div class="col-lg-6 col-12">
                         <div class="news-block">
                             <div class="news-block-top">
-                                <img src="{{ asset('images/single.jpg') }}"
+                                <img src="{{ asset($singleDonation->image) }}"
                                     class="news-image img-fluid col-lg-12" >
 
                                 <div class="news-category-block">
