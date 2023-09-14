@@ -19,6 +19,7 @@
     Donations list
 @endsection
 
+
 @section('content')
     <!-- Main content -->
     <section class="content">

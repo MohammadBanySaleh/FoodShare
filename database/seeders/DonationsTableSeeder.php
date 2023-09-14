@@ -16,6 +16,7 @@ class DonationsTableSeeder extends Seeder
      */
     public function run()
     {
+        // Donation::truncate();
        // Donation::truncate();
         Donation::create([
             'category_id' => 1, 
