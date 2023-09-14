@@ -16,11 +16,51 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
+            'name' => 'Mohammad',
+            'email' => 'mohammad.assad0101@gmail.com',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
+            'is_logged' => '1',
+        ]);
+        User::create([
             'name' => 'Abeda',
-            'email' => 'abeda@gmail.com',
-            'password' => '1234',
-            'mobile' => '0798244236',
-            'address' => 'irbid',
+            'email' => 'jarrahabeda@gmail.com',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
+            'is_logged' => '1',
+        ]);
+        User::create([
+            'name' => 'Salam',
+            'email' => 'sm980434@gmail.com',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
+            'is_logged' => '1',
+        ]);
+        User::create([
+            'name' => 'Marah',
+            'email' => 'mmabusaleh18@cit.just.edu.jo',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
+            'is_logged' => '1',
+        ]);
+        User::create([
+            'name' => 'Raghad',
+            'email' => 'raghad.taha198@gmail.com',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
+            'is_logged' => '1',
+        ]);
+        User::create([
+            'name' => 'Mohammad bany saleh',
+            'email' => 'banysaleh99@gmail.com',
+            'password' => '123456789',
+            'mobile' => '0777777777',
+            'address' => 'Irbid',
             'is_logged' => '1',
         ]);
     }
