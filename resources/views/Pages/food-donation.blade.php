@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <p>Donation name:  {{ $donations->name }}</p>
-                                    <p>Donation amount:  {{ $donations->price }} $</p>
+                                    <p>Donation amount:  {{ $donations->price }} JOD</p>
                                     <p>{{ $donations->description }}</p>
                                 </div>
                             </div>
