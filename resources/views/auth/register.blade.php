@@ -16,6 +16,8 @@
 </head>
 
 <body>
+<br><br><br>
+
 
 
 
@@ -78,7 +80,7 @@
                     <figure>
                         <img src="images/reg.png" alt="">
                     </figure>
-                    <a href="login" class="signup-image-link">I am already member</a>
+                    <a href="login" class="signup-image-link">Already a member?</a>
                 </div>
             </div>
         </div>
