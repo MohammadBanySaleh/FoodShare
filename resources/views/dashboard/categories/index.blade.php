@@ -45,7 +45,7 @@ Categories list
                 <tr>
                     <th>#</th>
                     <th>category_name</th>
-                    <th>category_description</th>
+                    <th style="width: 30%">category_description</th>
                     <th>category_image</th>
                     <th>Action</th>
                 </tr>
@@ -59,36 +59,28 @@ Categories list
                   <td>{{ $i }}</td>
                   <td>{{ $category->name }}</td>
                   <td>{{ $category->description }}</td>
-                  <td><img src="{{ asset($category->image) }}" alt="" width="100px" height="100px"></td>
-                  {{-- <td>@if ($category->image)
-                    <img src="{{ asset('images/' . $category->image) }}" alt="{{ $category->name }}" width="300">
-                    @endif
-                    </td> --}}
-                  
-                    <td class="project-actions">
-                      <div style="margin-bottom: 5px;">
-                          <a class="btn btn-info btn-sm" href="{{ route('categories.edit', $category->id) }}" style="width: 100%;">
-                              <i class="fas fa-pencil-alt"></i>
-                              Edit
-                          </a>
-                      </div>
-                  
-                      <div style="margin-bottom: 5px;">
-                          <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;">
-                              @method('DELETE')
-                              @csrf
-                              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')" style="width: 100%;">
-                                  <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
-                                  Delete
-                              </button>
-                          </form>
-                      </div>
-                  </td>
-                  
-                  
-                  
-                  
-                 
+                  <td><img src="{{ asset($category->image) }}" alt="" width="100px" height="100px"></td>  
+                    
+                  <td class="project-actions">
+                    <div style="margin-bottom: 5px; width: 100px;"> <!-- Adjust the width as needed -->
+                        <a class="btn btn-info btn-sm" href="{{ route('categories.edit', $category->id) }}" style="width: 100%;">
+                            <i class="fas fa-pencil-alt"></i>
+                            Edit
+                        </a>
+                    </div>
+                
+                    <div style="margin-bottom: 5px; width: 100px;"> <!-- Adjust the width as needed -->
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this category?')" style="width: 100%;">
+                                <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </td>
+                
                   @php
                     $i++;
                   @endphp

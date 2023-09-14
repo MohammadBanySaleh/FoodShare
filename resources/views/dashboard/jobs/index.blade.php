@@ -35,14 +35,15 @@
                                 <i class="fas fa-user-plus"></i> Add New Job
                             </a>
                         </div>
+
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Job Name</th>
-                                        <th>Action</th>
+                                        <th style="text-align: center; vertical-align: middle;">#</th>
+                                        <th style="text-align: center; vertical-align: middle;">Job Name</th>
+                                        <th style="text-align: center; vertical-align: middle;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,9 +52,10 @@
                                     @endphp
                                     @foreach ($jobs as $job)
                                         <tr>
-                                            <td>{{ $i }}</td>
-                                            <td>{{ $job->name }}</td>
-                                            <td class="project-actions">
+                                            <td style="text-align: center; vertical-align: middle;">{{ $i }}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{{ $job->name }}</td>
+
+                                            <td class="project-actions" style="text-align: center; vertical-align: middle;">
                                                 <a class="btn btn-info btn-sm" href="{{ route('jobs.edit', $job->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
@@ -64,6 +66,7 @@
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this job?')">Delete</button>
                                                 </form>
                                             </td>
+                                            
                                         </tr>
                                         @php
                                             $i++;
