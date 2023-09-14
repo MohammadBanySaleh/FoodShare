@@ -348,7 +348,8 @@
                                     </div> --}}
                                     {{-- <label>Select Job</label> --}}
                                     <select name="job" class="form-control">
-                                        <option value="" disabled selected>Select Job</option>
+                                        
+                                        <option value="" disabled selected>Select Job <span style="display:flex; justify-content:end">▼</span></option>
                                         @foreach ($jobs as $item)
                                             <option value="{{ $item->name }}">{{ $item->name }}</option>
                                         @endforeach
