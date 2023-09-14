@@ -32,14 +32,14 @@ class CustomAuthController extends Controller
             'password' => [
                 'required',
                 'min:8',
-                'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+                
             ]
         ]);
         
         $admin = Admin::where('email', $request->email)->first();
         
         if ($admin) {
-            if (Hash::check($request->password , $admin->password)) {
+            if ($request->password == $admin->password) {
                 $request->session()->put('id', $admin->id);
                 $categoryCount = Category::count();
                 $userCount = User::count();
