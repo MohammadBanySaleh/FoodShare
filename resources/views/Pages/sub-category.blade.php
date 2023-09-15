@@ -65,18 +65,20 @@
             </div>
           </div>
           @endforeach
-
-          <div class="col-12 my-4 rounded-5 py-3" style="background: #f0f8ff">
-            <center>
-              <h4 style="color: #5a6f80">If you want to donate something else</h4>
-                <br><br>
-                <div class="col-2 custom-form">
-                    <a href="{{ route('other.show') }}"><button type="submit" class="form-control">click here</button></a>
-                </div>
-              </div>
-            </center>
+          @if ($donation->category->id != 3)
+            <div class="col-12 my-4 rounded-5 py-3" style="background: #f0f8ff">
+              <center>
+                <h4 style="color: #5a6f80">If you want to donate something else</h4>
+                  <br><br>
+                  
+                  <div class="col-2 custom-form">
+                      <a href="{{ route('other.show') }}"><button type="submit" class="form-control">click here</button></a>
+                  </div>
+              </center>
+            </div>
+          @endif  
         </div>
-
+        
 
 
     </div> <br>
