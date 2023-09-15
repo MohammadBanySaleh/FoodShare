@@ -67,6 +67,11 @@
             </div>
         </section>
 
+        {{-- chat button --}}
+        {{-- <div class="fixed-chat-button">
+            <a href="{{ route('chat') }}" target="_self">Chat</a>
+        </div>	 --}}
+
 
         <section class="section-padding">
             <div class="container">

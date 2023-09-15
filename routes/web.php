@@ -18,7 +18,10 @@ use App\Http\Controllers\VolanteerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\FacebookController;
 
+use App\Http\Livewire\Chat\CreateChat;
+use App\Http\Livewire\Chat\Main;
 
 use App\Models\UserDonation;
 use Illuminate\Support\Facades\Blade;
@@ -160,3 +163,8 @@ Route::get('/certificate/download', [UserProfileController::class,'download'])->
 Route::post('dashboard_login', [CustomAuthController::class, 'loginUser'])->name('dashlog');
 Route::get('dashboard_logout', [CustomAuthController::class, 'logout']);
 // Route::post('dashboard_logout', [CustomAuthController::class, 'logout'])->name('logout');
+
+
+// Chat
+Route::get('/users', CreateChat::class)->name('users');
+Route::get('/chat/{key?}', Main::class)->name('chat');
