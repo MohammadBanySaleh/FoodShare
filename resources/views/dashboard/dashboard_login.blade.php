@@ -24,11 +24,20 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
+     
       <div style="display: flex; justify-content: center; align-items: center;">
+        
+    
         <img src="{{ asset('assets/img/logo.png') }}" alt="" width="50px">
     </div>
     
       <p class="login-box-msg">Sign in to start your session</p>
+      @if(Session::has('success'))
+      <div class="alert alert-success">{{ Session::get('success') }}</div>
+      @endif
+      @if(Session::has('fail'))
+      <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+      @endif
 
       <form action="{{ route('dashlog') }}" method="post">
         @csrf
@@ -56,13 +65,7 @@
             @enderror
         </div>
     
-        @if(Session::has('success'))
-        <div class="alert alert-success">{{ Session::get('success') }}</div>
-        @endif
-        @if(Session::has('fail'))
-        <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-        @endif
-    
+       
         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
     
       </form>

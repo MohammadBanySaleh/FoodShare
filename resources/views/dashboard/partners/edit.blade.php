@@ -35,7 +35,7 @@ Edit Partners
 
         <div class="form-group">
             <label for="image">Partner Image:</label>
-            <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror" value="{{ $partners->image }}">
+            <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror" value="{{ $partners->image }}" width="100px" height="100px">
             @error('image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

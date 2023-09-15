@@ -31,7 +31,17 @@ Create New User
           <input type="email" name="email" class="form-control" id="email"  placeholder="Enter user email ">
           @error('email') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
+        <div class="form-group">
+          <label  for="mobile">User mobile:</label>
+          <input type="text" name="mobile" class="form-control" id="mobile"  placeholder="Enter user mobile ">
+          @error('mobile') <span class="text-danger">{{ $message }}</span>   @enderror
+        </div>
 
+        <div class="form-group">
+          <label  for="address">User address:</label>
+          <input type="text" name="address" class="form-control" id="address"  placeholder="Enter user address ">
+          @error('address') <span class="text-danger">{{ $message }}</span>   @enderror
+        </div>
         <div class="form-group">
             <label  for="admin_password">User Password:</label>
             <input type="password" name="password" class="form-control" id="password"  placeholder="Enter user password ">

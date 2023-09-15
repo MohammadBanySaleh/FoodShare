@@ -23,26 +23,23 @@ Create New Category
         <div class="form-group" >
           <label for="name">Category Name:</label>
           <input type="text" name="name" class="form-control" id="name"  placeholder="Enter Category name">
-          @error('name') <span class="text-danger">{{ $message }}</span>   @enderror
+          <span>@error('name'){{$message}} @enderror</span>
+          
 
         </div>
         
         <div class="form-group">
           <label  for="description">Category description:</label>
           <input type="text" name="description" class="form-control" id="description"  placeholder="Enter category description ">
+          <span>@error('description'){{$message}} @enderror</span>
+
           {{-- @error('email') <span class="text-danger">{{ $message }}</span>   @enderror --}}
         </div>
 
         <div class="form-group">
             <label for="image">Category Image:</label>
-            <input type="file" class="form-control" name="image" required>
-
-
-            @error('image')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+            <input type="file" class="form-control" name="image" required  width="100px" height="100px">
+            <span>@error('image'){{$message}} @enderror</span>
         </div>
         {{-- <div>@if ($category->image)
           <img src="{{ asset('images/' . $category->image) }}" alt="{{ $category->name }}" width="300">

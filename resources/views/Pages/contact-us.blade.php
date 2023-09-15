@@ -1,5 +1,9 @@
 @extends('Layout.master')
 @section('content')
+<ul>
+    <a href="{{ url('/') }}">Home /</a>
+    <a href="{{ URL::current() }}">Contact us</a>
+</ul>
     <section class="contact-section section-padding" id="section_6">
         <div class="container">
             <div class="row">

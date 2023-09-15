@@ -50,7 +50,7 @@ class User extends Authenticatable implements MustVerifyEmail
     //With UserDonation Model
     public function userdonations()
     {
-        return $this->hasMany(UserDonation::class);
+        return $this->hasMany(UserDonation::class, 'user_id');
     }
 
 }

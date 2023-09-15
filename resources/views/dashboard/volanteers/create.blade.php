@@ -51,7 +51,7 @@ Create New volanteer
 
           
         <br>
-        <input type="submit" value="Add Category" class="btn btn-success"><br>
+        <input type="submit" value="Add Volunteer" class="btn btn-success"><br>
       </form>
  
               

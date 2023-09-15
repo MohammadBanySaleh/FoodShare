@@ -17,11 +17,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
         $this->call([
             CategoriesMainSeeder::class,
             PartnerSeeder::class,
             DonationsTableSeeder::class,
-        ]);
+         ]);
+
+
+       
 
     }
 }

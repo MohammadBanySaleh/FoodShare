@@ -25,6 +25,12 @@ Partners list
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+          <div> @if(session()->has('success'))
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">x</button>
+            {{session()->get('success') }}
+            @endif
+          </div>
           <div class="card">
             <div class="card-header">
                 <!-- Add a link to create a new user -->
@@ -51,7 +57,7 @@ Partners list
                 @foreach ($partners as $partner)
                 <td>{{ $i }}</td>
                 <td>{{ $partner->name }}</td>
-                <td><img src="{{ asset($partner->image) }}" alt="" width="100px"></td>
+                <td><img src="{{ asset($partner->image) }}" alt="" width="100px" height="100px"></td>
                 <td class="project-actions ">
                   {{-- <a class="btn btn-primary btn-sm" href="#">
                       <i class="fas fa-folder">
@@ -76,12 +82,13 @@ Partners list
                     onclick="return confirm('Are you sure you want to delete this partner?')">Delete</button>
                   </form>
               </td>
-                @endforeach
                 @php
                   $i++;
                 @endphp
 
                 </tr>
+                @endforeach
+
                 </tbody>
                 <tfoot>
                 </tfoot>

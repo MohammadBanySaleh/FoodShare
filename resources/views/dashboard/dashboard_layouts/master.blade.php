@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 
- @include('dashboard.dashboard_layouts.head');
+ @include('dashboard.dashboard_layouts.head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -16,9 +16,9 @@
    
   </div>
 
-  @include('dashboard.dashboard_layouts.main-headerbar');
+  @include('dashboard.dashboard_layouts.main-headerbar')
 
-  @include('dashboard.dashboard_layouts.main-sidebar');
+  @include('dashboard.dashboard_layouts.main-sidebar')
   
 
   <!-- Content Wrapper. Contains page content -->

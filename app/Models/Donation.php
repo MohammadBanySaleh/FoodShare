@@ -18,12 +18,12 @@ class Donation extends Model
     //With Category Model
     public function category() 
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     //With UserDonation Model
     public function userdonations() 
     {
-        return $this->hasMany(UserDonation::class);
+        return $this->hasMany(UserDonation::class,'donation_id');
     }
 }

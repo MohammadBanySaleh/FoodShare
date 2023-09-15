@@ -45,7 +45,7 @@ Create New Donation
 
         <div class="form-group">
             <label for="image">Donation Image:</label>
-            <input type="file"  class="form-control" name="image" required>
+            <input type="file"  class="form-control" name="image" required width="100px" height="100px">
             @error('image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

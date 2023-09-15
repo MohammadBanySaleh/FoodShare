@@ -29,7 +29,7 @@ Create New partner
 
         <div class="form-group">
             <label for="image">Partner Image:</label>
-            <input type="file" name="image" class="form-control" required>
+            <input type="file" name="image" class="form-control" required width="100px" height="100px">
             @error('image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Donation;
+use App\Models\MenuItem;
 use App\Models\User;
 use App\Models\UserDonation;
 use Illuminate\Http\Request;
@@ -49,10 +50,9 @@ class DonationController extends Controller
         $newImageName = uniqid() . '-' . $request->name . '.' . $request->file('image')->extension();
         $relativeImagePath = 'assets/images/' . $newImageName;
         $request->file('image')->move(public_path('assets/images'), $newImageName);
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required',
             'description' => 'required',
-            // 'image' => 'required',
             'price' => 'required',
         ]);
 
@@ -64,7 +64,7 @@ class DonationController extends Controller
             'image' => $relativeImagePath,
         ]);
 
-        return redirect()->route('donations.index');
+        return redirect()->route('donations.index')->with('success', 'Donation created successfully.');
     }
 
     /**
@@ -117,7 +117,6 @@ class DonationController extends Controller
     {
 
         $donations = Donation::where('category_id', $id)->paginate(6);
-        // $category = Donation::where('category_id', $id)->first();
         return view('pages/sub-category', compact('donations'));
     }
 

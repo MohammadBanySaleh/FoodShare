@@ -115,6 +115,17 @@ h6 {
     margin-top: 21px;
     text-align: center;
 }
+.plans2 {
+  background-color: #f2f2f2;
+  padding: 25px;
+  width: 160px;
+  margin-left: -22%;
+  margin-top: 8%;
+  height: 120px;
+  /* min-height: 150px; */
+  /* margin-top: 21px; */
+  text-align: center;
+}
 h1 {
   font-size: var(--h1-font-size);
   font-weight: var(--font-weight-bold);

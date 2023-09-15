@@ -1,4 +1,4 @@
-@extends('dashboard.dashboard_layouts.master')
+{{-- @extends('dashboard.dashboard_layouts.master')
 
 @section('title','Edit User')
 
@@ -23,7 +23,7 @@ Edit User
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="name">Name:</label>
+            <label for="name">User Name:</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" required
                 value="{{ old('name', $users->name) }}">
             @error('name')
@@ -32,17 +32,8 @@ Edit User
                 </span>
             @enderror
         </div>
-        {{-- <div class="form-group">
-            <label for="image">Image:</label>
-            <input type="file" name="image" class="form-control-file @error('image') is-invalid @enderror">
-            @error('image')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div> --}}
         <div class="form-group">
-            <label for="email">ُEmail:</label>
+            <label for="email">User Email:</label>
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" required
                 value="{{ old('email', $users->email) }}">
             @error('email')
@@ -52,7 +43,7 @@ Edit User
             @enderror
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="password">User Password:</label>
             <input type="password" name="password" class="form-control " required
                 value="{{ old('password', $users->password) }}">
             @error('password')
@@ -61,8 +52,28 @@ Edit User
                 </span>
             @enderror
         </div>
+        <div class="form-group">
+            <label for="mobile">User mobile:</label>
+            <input type="text" name="mobile" class="form-control " required
+                value="{{ old('mobile', $users->mobile) }}">
+            @error('mobile')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="address">User address:</label>
+            <input type="text" name="address" class="form-control " required
+                value="{{ old('address', $users->address) }}">
+            @error('address')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
         <button type="submit" class="btn btn-primary">Update</button>
-        {{-- <input type="submit" value="Update" class="btn btn-primary"> --}}
+        
     </form>
     </div>
 </div>
@@ -73,4 +84,4 @@ Edit User
 
 @section('scripts')
 
-@endsection
+@endsection --}}

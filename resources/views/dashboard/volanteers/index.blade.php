@@ -24,6 +24,12 @@ Volunteers list
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+          <div> @if(session()->has('success'))
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">x</button>
+            {{session()->get('success') }}
+            @endif
+          </div>
           <div class="card">
             <div class="card-header">
                 <!-- Add a link to create a new user -->

@@ -138,9 +138,10 @@ use App\Models\UserDonation;
                                 <thead>
                                     <tr>
                                         <th style="padding: 20px">NAME</th>
-                                        <th style="padding: 20px">description</th>
-                                        <th style="padding: 20px">price</th>
-                                        <th style="padding: 20px">quantity</th>
+                                        <th style="padding: 20px">Description</th>
+                                        <th style="padding: 20px">Price</th>
+                                        <th style="padding: 20px">Quantity</th>
+                                        <th style="padding: 20px">Total</th>
                                         {{-- <th style="padding: 20px">image</th> --}}
                                         <!-- Add more columns if needed -->
                                     </tr>
@@ -155,8 +156,9 @@ use App\Models\UserDonation;
                                         <tr>
                                             <td>{{ $donation->donation->name }}</td>
                                             <td>{{ $donation->donation->description }}</td>
-                                            <td>{{ $donation->donation->price }}</td>
+                                            <td>{{ $donation->donation->price }} JOD</td>
                                             <td>{{ $donation->quantity }}</td>
+                                            <td>{{ $donation->donation->price*$donation->quantity }} JOD</td>
                                             {{-- <td>{{ $donation->donation->image }}</td> --}}
                                             <!-- Add more columns if needed -->
                                         </tr>

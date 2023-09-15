@@ -9,6 +9,8 @@ use App\Models\UserDonation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
+
 
 
 
@@ -27,21 +29,31 @@ class CustomAuthController extends Controller
 
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:5|max:12'
+            'password' => [
+                'required',
+                'min:8',
+                'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+            ]
         ]);
         
         $admin = Admin::where('email', $request->email)->first();
         
         if ($admin) {
-            if ($request->password == $admin->password) {
+            if (Hash::check($request->password , $admin->password)) {
                 $request->session()->put('id', $admin->id);
                 $categoryCount = Category::count();
                 $userCount = User::count();
                 $DonationCount = Donation::count();
                 $UserDonationCount = UserDonation::count();
                 // dd($categoryCount);
-                return view('welcome-dashboard')->with('categoryCount', $categoryCount)->with('userCount', $userCount)->with('DonationCount', $DonationCount)->with('UserDonationCount', $UserDonationCount);
-            } else {
+                
+                return view('welcome-dashboard', [
+                    'categoryCount' => $categoryCount,
+                    'userCount' => $userCount,
+                    'DonationCount' => $DonationCount,
+                    'UserDonationCount' => $UserDonationCount
+                ]);
+                            } else {
                 return back()->with('fail', 'Password does not match');
             }
         } else {
@@ -50,14 +62,7 @@ class CustomAuthController extends Controller
         
          
 
-        // $credentials = $request->only('email', 'password');
-
-        // if (Auth::attempt($credentials)) {
-        //     return redirect()->route('dashboard.welcome-dashboard');
-        // }
-    
-        // return back()->with('fail', 'Invalid email or password');
-        
+      
 
     }
     // public function home(){
@@ -75,6 +80,21 @@ class CustomAuthController extends Controller
             Session::pull('id');
         }
         return view ('dashboard.dashboard_login'); // Redirect to the login page after logout.
+    }
+
+    public function sidebar(){
+        $categoryCount = Category::count();
+                $userCount = User::count();
+                $DonationCount = Donation::count();
+                $UserDonationCount = UserDonation::count();
+                // dd($categoryCount);
+                
+                return view('welcome-dashboard', [
+                    'categoryCount' => $categoryCount,
+                    'userCount' => $userCount,
+                    'DonationCount' => $DonationCount,
+                    'UserDonationCount' => $UserDonationCount
+                ]);
     }
     
 }

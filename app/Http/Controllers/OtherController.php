@@ -20,7 +20,7 @@ class OtherController extends Controller
      */
     public function index()
     {
-        //
+//
     }
 
     /**
@@ -41,7 +41,6 @@ class OtherController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'donation-phone' => 'required|regex:/^07\d{8}$/',
             'donation-address' => 'required|string',
@@ -77,6 +76,7 @@ class OtherController extends Controller
      */
     public function show()
     {
+        // $singleDonation = Donation::where('id', $id)->first();
         if (Auth::check()) {
             return view('Pages.other');
         } else {
