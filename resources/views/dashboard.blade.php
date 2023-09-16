@@ -3,14 +3,15 @@ use App\Models\UserDonation;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 
-// Get the currently logged-in user's ID
-$loggedInUserId = Auth::user()->id;
-// Count the number of messages where receiver_id matches the logged-in user's ID and read = 0
-$unreadMessagesCount = Message::where('receiver_id', $loggedInUserId)
-    ->where('read', 0)
-    ->count();
-
-// Now, $unreadMessagesCount contains the count of unread messages for the logged-in user
+if (auth()->check()) {
+    $loggedInUserId = Auth::user()->id;
+    // Count the number of messages where receiver_id matches the logged-in user's ID and read = 0
+        $unreadMessagesCount = Message::where('receiver_id', $loggedInUserId)
+            ->where('read', 0)
+            ->count();
+    
+        // Now, $unreadMessagesCount contains the count of unread messages for the logged-in user
+    }
 
 ?>
 

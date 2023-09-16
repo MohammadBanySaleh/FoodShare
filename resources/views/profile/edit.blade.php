@@ -3,14 +3,15 @@ use App\Models\UserDonation;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 
-// Get the currently logged-in user's ID
-$loggedInUserId = Auth::user()->id;
-// Count the number of messages where receiver_id matches the logged-in user's ID and read = 0
-$unreadMessagesCount = Message::where('receiver_id', $loggedInUserId)
-    ->where('read', 0)
-    ->count();
+if (auth()->check()) {
+    $loggedInUserId = Auth::user()->id;
+    // Count the number of messages where receiver_id matches the logged-in user's ID and read = 0
+    $unreadMessagesCount = Message::where('receiver_id', $loggedInUserId)
+        ->where('read', 0)
+        ->count();
 
-// Now, $unreadMessagesCount contains the count of unread messages for the logged-in user
+    // Now, $unreadMessagesCount contains the count of unread messages for the logged-in user
+}
 
 ?>
 <x-app-layout>
@@ -166,21 +167,24 @@ $unreadMessagesCount = Message::where('receiver_id', $loggedInUserId)
         <br><br><br>
         <div class="py-12 container">
             <div class="max-w-7xl mx-auto row">
-                <div class="col-md-6" > <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
+                <div class="col-md-6">
+                    <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
                     <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg" style="height: 440px !important;">
                         <div class="max-w-xl">
                             @include('profile.partials.update-profile-information-form')
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6"> <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
+                <div class="col-md-6">
+                    <!-- This div will take up 6 columns (half the width) on medium-sized screens and larger -->
                     <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <div class="max-w-xl">
                             @include('profile.partials.update-password-form')
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12"> <!-- This div will take up 12 columns (full width) on medium-sized screens and larger -->
+                <div class="col-md-12">
+                    <!-- This div will take up 12 columns (full width) on medium-sized screens and larger -->
                     <hr>
                     <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <div class="max-w-xl">
