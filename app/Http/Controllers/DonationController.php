@@ -53,7 +53,10 @@ class DonationController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            'price' => [
+                'required',
+                'regex:/^\d{1,3}(.\d{1,2})?$/',
+            ],
         ]);
 
 
@@ -62,6 +65,7 @@ class DonationController extends Controller
             'price' => $request->input('price'),
             'description' => $request->input('description'),
             'image' => $relativeImagePath,
+            'category_id' => $request->input('category_id'),
         ]);
 
         return redirect()->route('donations.index')->with('success', 'Donation created successfully.');

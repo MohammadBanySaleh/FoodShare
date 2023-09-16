@@ -35,14 +35,18 @@ class CreateChat extends Component
                 'body' => $this->message
             ]);
 
-            $createdConverstion->last_time_message = $createdMessage->created_at;
-            $checkedConverstion->save();
+            foreach ($checkedConverstion as $conversation) {
+                $conversation->last_time_message = $createdMessage->created_at;
+                $conversation->save();
+            }
 
-            dd($createdMessage);
-            dd('Saved');
+            // dd($createdMessage);
+            // dd('Saved');
+            return view('livewire.chat.main');
         }
         else if(count($checkedConverstion) >= 1){
-            dd('Conversation  exists');
+            // dd('Conversation  exists');
+            return view('livewire.chat.main');
         }
     }
     public function render()

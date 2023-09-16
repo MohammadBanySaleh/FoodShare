@@ -102,6 +102,7 @@ class UserDonationController extends Controller
         $request->validate([
             'donation-phone' => 'required|regex:/^07\d{8}$/',
             'donation-address' => 'required|string',
+            'quantity' => 'required|numeric|min:5'
         ], [
             'donation-phone.required' => 'Please enter your phone number.',
             'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
@@ -120,6 +121,7 @@ class UserDonationController extends Controller
         $userDonation->user_id = $user_idd;
         $userDonation->donation_id = $request->input('donation_id');
         $userDonation->description = $request->input('textarea');
+        $userDonation->quantity = $request->quantity;
         $userDonation->save();
 
         return redirect('/')->with('success', 'Your donation has been submit successfully!');

@@ -14,7 +14,7 @@
         const totalPrice = initialPrice * quantity;
 
         // Update the displayed price
-        priceElement.textContent = totalPrice.toFixed(2); // Assuming 2 decimal places
+        priceElement.textContent = totalPrice.toFixed(2) + " JOD"; // Assuming 2 decimal places
         // Update the hidden price input field
         hiddenPrice.value = totalPrice.toFixed(2); // Update the hidden input field
     });
