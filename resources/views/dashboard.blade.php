@@ -1,5 +1,6 @@
 <?php
 use App\Models\UserDonation;
+use App\Models\Other;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 
@@ -188,9 +189,12 @@ if (auth()->check()) {
                                     </thead>
                                     <tbody>
                                         <?php
-                                        
-                                        $user_id = auth()->user()->id;
-                                        $test = UserDonation::where('user_id', $user_id)->get();
+                                            $user_id = auth()->user()->id;
+                                            $test = UserDonation::where('user_id', $user_id)->get();
+                                        ?>
+                                        <?php
+                                            $user_id = auth()->user()->id;
+                                            $other = Other::where('user_id', $user_id)->get();
                                         ?>
                                         @foreach ($test as $donation)
                                             <tr>
@@ -204,8 +208,19 @@ if (auth()->check()) {
                                                 <td>{{ $donation->donation->price }} JOD</td>
                                                 <td>{{ $donation->quantity }}</td>
                                                 <td>{{ $donation->donation->price * $donation->quantity }} JOD</td>
-                                                {{-- <td>{{ $donation->donation->image }}</td> --}}
-                                                <!-- Add more columns if needed -->
+                                            </tr>
+                                        @endforeach
+
+                                        @foreach ($other as $donation)
+                                            <tr>
+                                                <td>
+                                                        <b>&nbsp; (Other Donation)</b>
+                                                    
+                                                </td>
+                                                <td>{{ $donation->content }}</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

@@ -31,7 +31,7 @@ Route::get('/money', function () {
 
 Route::get('/money/{id}', [DonationController::class, 'show'])->middleware(['auth', 'verified'])->name('money.show');
 Route::get('/things/{id}', [DonationController::class, 'shows'])->middleware(['auth', 'verified'])->name('things.show');
-Route::get('/other', [OtherController::class, 'show'])->name('other.show');
+Route::get('/other', [OtherController::class, 'show'])->middleware(['auth', 'verified'])->name('other.show');
 Route::post('/things/{id}', [UserDonationController::class, 'update'])->name('food.store');
 Route::post('/money', [UserDonationController::class, 'store'])->name('money.store');
 Route::post('/other', [OtherController::class, 'store'])->name('other.store');

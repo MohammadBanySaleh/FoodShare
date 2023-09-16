@@ -47,7 +47,7 @@ class OtherController extends Controller
 
         $other = new Other();
         $other->user_id = $user_idd;
-        $other->description = $request->input('description');
+        $other->content = $request->input('description');
         $other->save();
 
         return redirect('/')->with('success', 'Your donation has been submit successfully!');

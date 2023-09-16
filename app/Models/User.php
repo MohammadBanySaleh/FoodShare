@@ -38,4 +38,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(UserDonation::class, 'user_id');
     }
 
+    //With Other Model
+    public function others()
+    {
+        return $this->hasMany(Other::class, 'user_id');
+    }
+
 }
