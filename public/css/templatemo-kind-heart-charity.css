@@ -1331,16 +1331,16 @@ blockquote::before {
 -----------------------------------------*/
 .site-footer {
   background-color: var(--site-footer-bg-color);
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .site-footer-bottom {
   background-color: var(--secondary-color);
   position: relative;
   z-index: 2;
-  margin-top: 70px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .site-footer-bottom a {
