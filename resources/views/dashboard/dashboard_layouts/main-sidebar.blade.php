@@ -5,7 +5,7 @@
     <img src="{{ asset('assets/img/logo.png') }}" href="{{url('/')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity:.8"  >
     <span class="brand-text font-weight-bolder font-size-300px">FoodSHare</span>
     <div class="info">
-      <h5 style=" color:#53A798; display: inline-block; margin-right: 10px;margin-top:20px;margin-left:10px">Welcome,back {{ session('name') }}</h5>
+      <h5 style=" color:#53A798; display: inline-block; margin-right: 10px;margin-top:20px;margin-left:10px">Welcome back,  {{ session('name') }}</h5>
   </div>
   </a>
   

@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class UserDonationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $userDonation=UserDonation::get();
@@ -21,26 +16,13 @@ class UserDonationController extends Controller
         return view('dashboard.user-donations.index',compact('userDonation'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-
-        // Validation (example)
         $request->validate([
             'donation-phone' => 'required|regex:/^07\d{8}$/',
             'donation-address' => 'required|string',
@@ -64,51 +46,46 @@ class UserDonationController extends Controller
         $userDonation->save();
 
         return redirect('/');
-}
+    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\UserDonation  $userDonation
-     * @return \Illuminate\Http\Response
-     */
     public function show(UserDonation $userDonation)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserDonation  $userDonation
-     * @return \Illuminate\Http\Response
-     */
     public function edit(UserDonation $userDonation)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserDonation  $userDonation
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
-        // Validation (example)
-        $request->validate([
-            'donation-phone' => 'required|regex:/^07\d{8}$/',
-            'donation-address' => 'required|string',
-            'quantity' => 'required|numeric|min:5'
-        ], [
-            'donation-phone.required' => 'Please enter your phone number.',
-            'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
-            'donation-address.required' => 'Please enter your address.',
-            'donation-address.string' => 'The address must be a valid string.',
-        ]);
+        if($id == 2)
+        {
+            $request->validate([
+                'donation-phone' => 'required|regex:/^07\d{8}$/',
+                'donation-address' => 'required|string',
+                'quantity' => 'required|numeric|min:5'
+            ], [
+                'donation-phone.required' => 'Please enter your phone number.',
+                'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
+                'donation-address.required' => 'Please enter your address.',
+                'donation-address.string' => 'The address must be a valid string.',
+            ]);
+        }
+        else{
+            $request->validate([
+                'donation-phone' => 'required|regex:/^07\d{8}$/',
+                'donation-address' => 'required|string',
+                'quantity' => 'required|numeric|min:1'
+            ], [
+                'donation-phone.required' => 'Please enter your phone number.',
+                'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
+                'donation-address.required' => 'Please enter your address.',
+                'donation-address.string' => 'The address must be a valid string.',
+            ]);
+        }
+        
 
         $user_idd = auth()->user()->id;
 
@@ -117,23 +94,17 @@ class UserDonationController extends Controller
             'address' => $request->input('donation-address')
         ]);
 
-        $userDonation = new UserDonation();
-        $userDonation->user_id = $user_idd;
-        $userDonation->donation_id = $request->input('donation_id');
-        $userDonation->description = $request->input('textarea');
-        $userDonation->quantity = $request->quantity;
-        $userDonation->save();
+            $userDonation = new UserDonation();
+            $userDonation->user_id = $user_idd;
+            $userDonation->donation_id = $request->input('donation_id');
+            $userDonation->description = $request->input('textarea');
+            $userDonation->quantity = $request->quantity;
+            $userDonation->save();
 
         return redirect('/')->with('success', 'Your donation has been submit successfully!');
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\UserDonation  $userDonation
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(UserDonation $userDonation)
     {
         //

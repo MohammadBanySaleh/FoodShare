@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -41,7 +42,7 @@ class GoogleAuthController extends Controller
 
                 Auth::login($new_user);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/');
 
             }
             //If user exists in the database
@@ -53,7 +54,7 @@ class GoogleAuthController extends Controller
 
             }
 
-        } catch(\Throwable $th){
+        } catch(Exception $th){
 
             dd('Something went wrong! ' . $th->getMessage());
 

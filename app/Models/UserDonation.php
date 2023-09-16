@@ -11,6 +11,9 @@ class UserDonation extends Model
     protected $fillable = [
         'user_id',
         'donation_id',
+        'description',
+        'total',
+        'quantity'
     ];
     //With Donation Model
     public function donation() 

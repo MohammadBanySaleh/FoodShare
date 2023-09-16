@@ -106,6 +106,17 @@
                                         
                                     </tr>
                                 @endforeach
+
+                                @foreach ($others as $donation)
+                                            <tr>
+                                                <td>(Other Donation)</b>
+                                                </td>
+                                                <td>{{ $donation->content }}</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                            </tr>
+                                        @endforeach
                             </tbody>
                         </table>
                         <div>

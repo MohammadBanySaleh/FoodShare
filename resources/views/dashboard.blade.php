@@ -1,5 +1,6 @@
 <?php
 use App\Models\UserDonation;
+use App\Models\Other;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 
@@ -46,7 +47,7 @@ if (auth()->check()) {
         <link href="{{ asset('css/partners.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/userprofile.css') }}">
 
-
+        <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png">
 
         <link href="css/responsive.css" rel="stylesheet" />
 
@@ -115,7 +116,9 @@ if (auth()->check()) {
                                     </g>
                                 </svg>
                                 <span class="bag-notification">
-                                    <small>{{ $unreadMessagesCount }}</small>
+                                    @if ($unreadMessagesCount != 0)
+                                        <small>{{ $unreadMessagesCount }}</small>
+                                    @endif
                                 </span>
                             </a>
                             <div class="dropdown">
@@ -186,9 +189,12 @@ if (auth()->check()) {
                                     </thead>
                                     <tbody>
                                         <?php
-                                        
-                                        $user_id = auth()->user()->id;
-                                        $test = UserDonation::where('user_id', $user_id)->get();
+                                            $user_id = auth()->user()->id;
+                                            $test = UserDonation::where('user_id', $user_id)->get();
+                                        ?>
+                                        <?php
+                                            $user_id = auth()->user()->id;
+                                            $other = Other::where('user_id', $user_id)->get();
                                         ?>
                                         @foreach ($test as $donation)
                                             <tr>
@@ -202,8 +208,19 @@ if (auth()->check()) {
                                                 <td>{{ $donation->donation->price }} JOD</td>
                                                 <td>{{ $donation->quantity }}</td>
                                                 <td>{{ $donation->donation->price * $donation->quantity }} JOD</td>
-                                                {{-- <td>{{ $donation->donation->image }}</td> --}}
-                                                <!-- Add more columns if needed -->
+                                            </tr>
+                                        @endforeach
+
+                                        @foreach ($other as $donation)
+                                            <tr>
+                                                <td>
+                                                        <b>&nbsp; (Other Donation)</b>
+                                                    
+                                                </td>
+                                                <td>{{ $donation->content }}</td>
+                                                <td>--</td>
+                                                <td>--</td>
+                                                <td>--</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -214,7 +231,7 @@ if (auth()->check()) {
                                 <br><br>
                             </div>
                         @else
-                            <h4 class="text-center" style="color: #5bc1ac">"You don't make anu Donation yet, consider
+                            <h4 class="text-center" style="color: #5bc1ac">"You don't make any Donation yet, consider
                                 making a contribution!"</h4 class="text-center"><br>
                             <center><a href="{{ url('/#causes') }}" style="background-color: #5bc1ac; border: none;"
                                     class="btn btn-primary">Donate Now</a></center><br>

@@ -12,10 +12,8 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PaymentDetailsController extends Controller
 {
-
     public function payment(Request $request)
     {
-
 
         // Validation (example)
         $request->validate([

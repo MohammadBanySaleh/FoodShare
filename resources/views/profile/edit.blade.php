@@ -43,7 +43,7 @@ if (auth()->check()) {
         <link href="{{ asset('css/partners.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/userprofile.css') }}">
 
-
+        <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png">
 
         <link href="css/responsive.css" rel="stylesheet" />
 
@@ -112,7 +112,9 @@ if (auth()->check()) {
                                     </g>
                                 </svg>
                                 <span class="bag-notification">
-                                    <small>{{ $unreadMessagesCount }}</small>
+                                    @if ($unreadMessagesCount != 0)
+                                        <small>{{ $unreadMessagesCount }}</small>
+                                    @endif
                                 </span>
                             </a>
                             <div class="dropdown">
@@ -203,7 +205,7 @@ if (auth()->check()) {
                     <div class="col-lg-4 col-12 mb-4">
                         <img src="{{ asset('images/logo.png') }}" class="logo img-fluid" alt="">
                         <a class="navbar-brand">
-                            <span>
+                            <span style="color: #5bc1ac;">
                                 FoodSHare
                                 <small>Non-profit Organization</small>
                             </span>

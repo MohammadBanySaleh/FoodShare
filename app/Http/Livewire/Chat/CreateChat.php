@@ -40,13 +40,13 @@ class CreateChat extends Component
                 $conversation->save();
             }
 
+            return redirect()->route('chat');
             // dd($createdMessage);
             // dd('Saved');
-            return view('livewire.chat.main');
         }
         else if(count($checkedConverstion) >= 1){
+            return redirect()->route('chat');
             // dd('Conversation  exists');
-            return view('livewire.chat.main');
         }
     }
     public function render()

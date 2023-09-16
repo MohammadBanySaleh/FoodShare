@@ -54,21 +54,22 @@ class UserProfileController extends Controller
 
     }
     public function download()
-{
-    // Fetch the user and project information
-    $user = auth()->user(); // You can adjust this to retrieve the user as needed
-    $donation = $user->userdonations; // Assuming you have a relationship set up
+    {
+        // Fetch the user and project information
+        $user = auth()->user(); // You can adjust this to retrieve the user as needed
+        $donation = $user->userdonations; // Assuming you have a relationship set up
+        $others = $user->others;
 
-    // Load the HTML template
-    $html = view('certificate_template', compact('user', 'donation'));
+        // Load the HTML template
+        $html = view('certificate_template', compact('user', 'donation', 'others'));
 
-    // Generate PDF
-    $pdf = PDF::loadHTML($html);
+        // Generate PDF
+        $pdf = PDF::loadHTML($html);
 
-    // Optional: Set PDF options
-    // $pdf->setOption('isPhpEnabled', true);
+        // Optional: Set PDF options
+        // $pdf->setOption('isPhpEnabled', true);
 
-    // Save or download the PDF
-    return $pdf->download('Your_Donations.pdf');
-}
+        // Save or download the PDF
+        return $pdf->download('Your_Donations.pdf');
+    }
 }
