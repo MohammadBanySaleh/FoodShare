@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+
+        PaginationPaginator::useBootstrap();
         // Validator::extend('strong_password', function ($attribute, $value, $parameters, $validator) {
         //     // Check if the password contains at least one lowercase letter
         //     if (!preg_match('/[a-z]/', $value)) {
