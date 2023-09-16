@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -18,7 +19,7 @@ class GoogleAuthController extends Controller
     // This function is responsible to handel the call-back url of google authentication
     public function callbackGoogle() 
     {
-        try{
+        // try{
 
             $google_user = Socialite::driver('google')->user();
             // $google_user->getEmail()->first();
@@ -53,10 +54,10 @@ class GoogleAuthController extends Controller
 
             }
 
-        } catch(\Throwable $th){
+        // } catch(Exception $th){
 
-            dd('Something went wrong! ' . $th->getMessage());
+        //     dd('Something went wrong! ' . $th->getMessage());
 
-        }
+        // }
     }
 }
