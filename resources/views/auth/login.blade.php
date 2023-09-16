@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="email"><i class="zmdi zmdi-account material-icons-name"
                                     :value="__('Email')"></i></label>
-                            <input   id="email" placeholder="Your Name"
+                            <input   id="email" placeholder="Your Email"
                                 type="email" name="email"  />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>

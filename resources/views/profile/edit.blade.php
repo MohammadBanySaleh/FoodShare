@@ -112,7 +112,9 @@ if (auth()->check()) {
                                     </g>
                                 </svg>
                                 <span class="bag-notification">
-                                    <small>{{ $unreadMessagesCount }}</small>
+                                    @if ($unreadMessagesCount != 0)
+                                        <small>{{ $unreadMessagesCount }}</small>
+                                    @endif
                                 </span>
                             </a>
                             <div class="dropdown">
@@ -203,7 +205,7 @@ if (auth()->check()) {
                     <div class="col-lg-4 col-12 mb-4">
                         <img src="{{ asset('images/logo.png') }}" class="logo img-fluid" alt="">
                         <a class="navbar-brand">
-                            <span>
+                            <span style="color: #5bc1ac;">
                                 FoodSHare
                                 <small>Non-profit Organization</small>
                             </span>

@@ -19,8 +19,6 @@
                 <ul class="footer-menu d-flex flex-column">
                     <li class="footer-menu-item"><a href="#ourStory" class="footer-menu-link">Our Story</a></li>
 
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Newsroom</a></li>
-
                     <li class="footer-menu-item"><a href="#" class="footer-menu-link">Causes</a></li>
                 </ul>
             </div>

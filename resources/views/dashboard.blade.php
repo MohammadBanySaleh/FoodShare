@@ -115,7 +115,9 @@ if (auth()->check()) {
                                     </g>
                                 </svg>
                                 <span class="bag-notification">
-                                    <small>{{ $unreadMessagesCount }}</small>
+                                    @if ($unreadMessagesCount != 0)
+                                        <small>{{ $unreadMessagesCount }}</small>
+                                    @endif
                                 </span>
                             </a>
                             <div class="dropdown">
