@@ -58,18 +58,34 @@ class UserDonationController extends Controller
         //
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'donation-phone' => 'required|regex:/^07\d{8}$/',
-            'donation-address' => 'required|string',
-            'quantity' => 'required|numeric|min:5'
-        ], [
-            'donation-phone.required' => 'Please enter your phone number.',
-            'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
-            'donation-address.required' => 'Please enter your address.',
-            'donation-address.string' => 'The address must be a valid string.',
-        ]);
+        if($id == 2)
+        {
+            $request->validate([
+                'donation-phone' => 'required|regex:/^07\d{8}$/',
+                'donation-address' => 'required|string',
+                'quantity' => 'required|numeric|min:5'
+            ], [
+                'donation-phone.required' => 'Please enter your phone number.',
+                'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
+                'donation-address.required' => 'Please enter your address.',
+                'donation-address.string' => 'The address must be a valid string.',
+            ]);
+        }
+        else{
+            $request->validate([
+                'donation-phone' => 'required|regex:/^07\d{8}$/',
+                'donation-address' => 'required|string',
+                'quantity' => 'required|numeric|min:1'
+            ], [
+                'donation-phone.required' => 'Please enter your phone number.',
+                'donation-phone.regex' => 'Please enter a valid phone number as 07XXXXXXXX.',
+                'donation-address.required' => 'Please enter your address.',
+                'donation-address.string' => 'The address must be a valid string.',
+            ]);
+        }
+        
 
         $user_idd = auth()->user()->id;
 
@@ -78,12 +94,12 @@ class UserDonationController extends Controller
             'address' => $request->input('donation-address')
         ]);
 
-        $userDonation = new UserDonation();
-        $userDonation->user_id = $user_idd;
-        $userDonation->donation_id = $request->input('donation_id');
-        $userDonation->description = $request->input('textarea');
-        $userDonation->quantity = $request->quantity;
-        $userDonation->save();
+            $userDonation = new UserDonation();
+            $userDonation->user_id = $user_idd;
+            $userDonation->donation_id = $request->input('donation_id');
+            $userDonation->description = $request->input('textarea');
+            $userDonation->quantity = $request->quantity;
+            $userDonation->save();
 
         return redirect('/')->with('success', 'Your donation has been submit successfully!');
 
