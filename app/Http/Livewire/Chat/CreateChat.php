@@ -35,14 +35,18 @@ class CreateChat extends Component
                 'body' => $this->message
             ]);
 
-            $createdConverstion->last_time_message = $createdMessage->created_at;
-            $checkedConverstion->save();
+            foreach ($checkedConverstion as $conversation) {
+                $conversation->last_time_message = $createdMessage->created_at;
+                $conversation->save();
+            }
 
-            dd($createdMessage);
-            dd('Saved');
+            return redirect()->route('chat');
+            // dd($createdMessage);
+            // dd('Saved');
         }
         else if(count($checkedConverstion) >= 1){
-            dd('Conversation  exists');
+            return redirect()->route('chat');
+            // dd('Conversation  exists');
         }
     }
     public function render()

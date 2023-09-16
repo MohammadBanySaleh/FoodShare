@@ -1,4 +1,5 @@
 @extends('Layout.master')
+@section('title', 'FoodSHare')
 @section('content')
     {{-- {{ auth()->user()->name; }} --}}
     <main>
@@ -17,7 +18,7 @@
                         <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="images/slide/s1.png" class="carousel-image img-fluid" alt="...">
+                                    <img src="images/hero1.jfif" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>be a Kind Heart</h1>
@@ -28,7 +29,7 @@
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="images/slide/jordan-donation.jpg" class="carousel-image img-fluid"
+                                    <img src="images/hero4.jfif" class="carousel-image img-fluid"
                                         alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
@@ -39,7 +40,7 @@
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="images/slide/3.jpg" class="carousel-image img-fluid" alt="...">
+                                    <img src="images/hero3.jfif" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>Humanity</h1>

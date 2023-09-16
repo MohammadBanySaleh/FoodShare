@@ -1,4 +1,5 @@
 @extends('Layout.master')
+@section('title', 'Sens Email To All Users')
 @section('content')
     <br><br><br><br><br><br><br>
     <div class="container">

@@ -7,6 +7,20 @@ https://templatemo.com/tm-581-kind-heart-charity
 */
 
 
+.bag-notification {
+  position: relative;
+}
+
+.bag-notification small {
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white; 
+  border-radius: 50%;
+  padding: 2px 8px;
+}
 
 @font-face {
     font-family: 'Metropolis';

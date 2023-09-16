@@ -19,7 +19,6 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FacebookController;
-
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
 

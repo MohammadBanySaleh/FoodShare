@@ -1,3 +1,6 @@
+ {{-- @vite(['resources/css/app.css', 'resources/js/app.js'])  --}}
+{{--@include('layouts.navigation') --}}
+
 <div>
 
     <ul class="list-group w-75 mx-auto mt-3 container-fluid">
