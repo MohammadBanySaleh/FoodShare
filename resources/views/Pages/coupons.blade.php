@@ -52,13 +52,11 @@
 <div class="row">
     <h5 class="mb-3 col-2">{{ $singleDonation->price }} JOD</h5>
                                 <div class="col-10" style="height: 45px;">                    
-                                    {{-- <div class="col-12 col-md-6 col-sm-12 col-xs-12"> --}}
                                         <a href="{{ route('things.show', ['id' => $singleDonation->id]) }}">
                                         <div class="plans2"><img src="{{ asset('images/moneydonate.png') }}" style="height: 35px; width: 35px;"><br>
                                             <h6 class="pt-2"><a href="{{ route('money.show', ['id' => $singleDonation->id]) }}"><span style="color:#5c5c5c;"><strong>Donate</strong></span></a></h6>
                                         </div>
                                         </a>
-                                    {{-- </div> --}}
                                 </div>
 </div>
                                 

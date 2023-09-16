@@ -1,5 +1,3 @@
-{{-- التبرع العيني --}}
-
 @extends('Layout.master')
 @section('title', 'Food Donation')
 @section('content')
