@@ -26,15 +26,15 @@ class FacebookController extends Controller
             $user = Socialite::driver('facebook')->user();
 
             //check if the user in the database or not
-            $finduser = User::where('facebook_id', $user->id)->first();
+            $finduser = User::where('facebook_id', $user->getId())->first();
 
             //If user doesn't exists in the database -> create new user
             if(!$finduser){
 
                 $new_user = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'facebook_id' => $user->id
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'facebook_id' => $user->getId()
                 ]);
 
                 Auth::login($new_user);
