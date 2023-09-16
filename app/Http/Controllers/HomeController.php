@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CustomEmail;
+use App\Mail\VolanteerMail;
 use App\Models\Category;
 use App\Models\Job;
 use App\Models\Partner;
 use App\Models\Volanteer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -39,6 +42,16 @@ class HomeController extends Controller
             'comments' => $request->comments,
             'mobile' => $request->mobile
         ]);
+
+        $name = $request->name;
+        $email = $request->email;
+        $mobile = $request->mobile;
+        $job = $request->job;
+        $comments = $request->comments;
+
+        $adminEmail = "betaqbx@gmail.com";
+        Mail::to($adminEmail)->send(new VolanteerMail($name, $email, $mobile, $job, $comments));
+
 
         return redirect('/')->with('message', 'Your application has been recived, our team will contact you soon.');
     }

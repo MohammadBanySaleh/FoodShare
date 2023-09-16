@@ -1,17 +1,17 @@
 @extends('dashboard.dashboard_layouts.master')
 
-@section('title', 'Create New Category')
+@section('title', 'Emails')
 
 
 @section('css')
 @endsection
 
 @section('title_page1')
-    Categories
+  Emails
 @endsection
 
 @section('title_page2')
-    Create New Category
+    send
 @endsection
 
 @section('content')

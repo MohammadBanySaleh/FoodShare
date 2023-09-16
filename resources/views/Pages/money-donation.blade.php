@@ -44,7 +44,7 @@
                                 <div class="col-lg-12 col-12 form-check-group">
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1"
-                                            name="price">{{ $donations->price }}</span>
+                                            name="price">{{ $donations->price }} JOD</span>
 
                                         <input type="number" class="form-control" placeholder="select quantity"
                                             aria-label="Username" aria-describedby="basic-addon1" min="1"

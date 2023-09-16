@@ -28,7 +28,7 @@ Create New Donation
                   <option value="{{ $categoryName->id }}">{{ $categoryName->name }}</option>
               @endforeach
           </select>
-          <input type="hidden" value="{{ $categoryName->id }}"name="category_id">
+          {{-- <input type="hidden" value="{{ $categoryName->id }}"name="category_id"> --}}
       </div>
       
 
@@ -41,6 +41,8 @@ Create New Donation
         <div class="form-group">
           <label  for="description">Donation description:</label>
           <input type="text" name="description" class="form-control" id="description"  placeholder="Enter donation description ">
+          @error('description') <span class="text-danger">{{ $message }}</span>   @enderror
+
         </div>
 
         <div class="form-group">
@@ -55,6 +57,8 @@ Create New Donation
         <div class="form-group">
           <label  for="price">Donation price:</label>
           <input type="text" name="price" class="form-control" id="price"  placeholder="Enter donation price ">
+          @error('price') <span class="text-danger">{{ $message }}</span>   @enderror
+
         </div>
           
         <br>

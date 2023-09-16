@@ -103,7 +103,6 @@ class CategoryController extends Controller
           
         $request->validate([
           'name' => 'required',
-          // 'image' => 'required', 
           'description' => 'required',
       
         ]);

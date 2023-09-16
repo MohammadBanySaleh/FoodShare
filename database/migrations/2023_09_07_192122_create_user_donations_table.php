@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('donation_id');
-            $table->integer('quantity')->nullable();
+            $table->integer('quantity')->default(1);
             $table->float('total')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

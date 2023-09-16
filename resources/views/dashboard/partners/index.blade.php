@@ -35,7 +35,7 @@ Partners list
             <div class="card-header">
                 <!-- Add a link to create a new user -->
                 <a class="btn btn-primary btn-sm float-left" href="{{ route('partners.create') }}">
-                    <i class="fas fa-user-plus"></i> Add New Partner
+                    <i class="fas fa-handshake nav-icon"></i> Add New Partner
                 </a>
             </div>
             <!-- /.card-header -->
@@ -43,7 +43,7 @@ Partners list
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th>partner_name</th>
                     <th>partner_image</th>
                     <th>Action</th>

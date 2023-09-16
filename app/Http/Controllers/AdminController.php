@@ -100,38 +100,16 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admins , $id)
   {
-    // dd($request->all());
-   
-    //   $request->validate([
-    //       'name' => 'required',
-    //       'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif |max:2048',
-    //       Add any desired image validation rules
-    //       'email' => 'required|email'. $id,
-    //       'password' => [
-    //           'required',
-    //           'min:8',
-    //           'regex:/^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%*?&]+$/']]);
-
         $admins = Admin::findOrFail($id);
 
 
-        // $admins = new Admin();
+       
 
         $admins->name = $request->input('name');
         $admins->email = $request->input('email');
         $admins->password = Hash::make ($request->input('password'));
         
         
-
-        // if ($request->hasFile('image')) {
-        //     $image = $request->file('image');
-        //     $imageName = time() . '.' . $image->getClientOriginalExtension();
-        //     $image->move(public_path('images'), $imageName); // Upload the image to the public/images directory
-        //     $admins->image = $imageName;
-        //     // $storedPath = $uploadedFile->store('public/photo');
-        //     $admins->save();
-
-        // }
         try {
             $admins->save();
         } catch (\Exception $e) {
@@ -139,7 +117,7 @@ class AdminController extends Controller
             dd($e->getMessage());
         }
 
-        // $admins->save();
+
 
         return redirect()->route('admins.index')->with('success', 'Admin updated successfully');
     }

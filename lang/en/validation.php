@@ -167,6 +167,12 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    // 'custom' => [
+    //     'password' => [
+    //         'strong_password' => 'The :attribute must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long.',
+    //     ],
+    // ],
+    
 
     /*
     |--------------------------------------------------------------------------

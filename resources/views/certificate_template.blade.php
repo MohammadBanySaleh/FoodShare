@@ -69,6 +69,9 @@
                             <div>
                                 <center><h2>Donations Report</h2></center>
                             </div>
+                            <h6>
+                                Name: {{auth()->user()->name}}
+                            </h6>
                         </div><br>
                         <table class="table">
                             <thead>
@@ -87,6 +90,7 @@
                                 <?php
                                 // $user_id = auth()->user()->id;
                                 // $test = UserDonation::where('user_id', $user_id)->get();
+                                $total = 0;
                                 ?>
                                 @foreach ($donation as $item)
                                     <tr>
@@ -97,11 +101,20 @@
                                         <td>{{ $item->donation->price * $item->quantity }} JOD</td>
                                         {{-- <td>{{ $donation->donation->image }}</td> --}}
                                         <!-- Add more columns if needed -->
+                                        
+                                            {{$total += $item->donation->price * $item->quantity}}
+                                        
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        <div>
+                            <b>Total:
+                                {{$total}}
+                             JOD</b>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

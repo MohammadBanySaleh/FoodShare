@@ -35,7 +35,7 @@ Categories list
             <div class="card-header">
                 <!-- Add a link to create a new user -->
                 <a class="btn btn-primary btn-sm float-left" href="{{ route('categories.create') }}">
-                    <i class="fas fa-user-plus"></i> Add New Category
+                    <i class="fas fa-th nav-icon"></i> Add New Category
                 </a>
             </div>
             <!-- /.card-header -->
@@ -43,7 +43,7 @@ Categories list
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th>category_name</th>
                     <th style="width: 30%">category_description</th>
                     <th>category_image</th>
@@ -173,5 +173,8 @@ Categories list
       });
     });
   </script>
+
+
+
 
 @endsection

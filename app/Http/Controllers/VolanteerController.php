@@ -43,8 +43,8 @@ class VolanteerController extends Controller
             'email' => 'required',
             'job' => 'required',
             'comments' => 'required',
-            'mobile' => 'required',
-            
+            'mobile' => ['required', 'regex:/^(079|078|077)\d{7}$/'],
+
         ]);
     
         Volanteer::create($validatedData);

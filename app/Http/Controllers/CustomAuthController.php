@@ -28,19 +28,23 @@ class CustomAuthController extends Controller
         $UserDonation = UserDonation::all();
 
         $request->validate([
+            'name' => 'required',
             'email' => 'required|email',
             'password' => [
                 'required',
                 'min:8',
-                'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+                // 'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
+
+                
             ]
         ]);
         
         $admin = Admin::where('email', $request->email)->first();
         
         if ($admin) {
-            if (Hash::check($request->password , $admin->password)) {
+            if ($request->password == $admin->password) {
                 $request->session()->put('id', $admin->id);
+                session()->put('name', $admin->name);
                 $categoryCount = Category::count();
                 $userCount = User::count();
                 $DonationCount = Donation::count();

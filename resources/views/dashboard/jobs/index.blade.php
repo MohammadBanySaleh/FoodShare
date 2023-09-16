@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <!-- Add a link to create a new job -->
                             <a class="btn btn-primary btn-sm float-left" href="{{ route('jobs.create') }}">
-                                <i class="fas fa-user-plus"></i> Add New Job
+                                <i class="fas fa-briefcase nav-icon"></i> Add New Job
                             </a>
                         </div>
 
@@ -41,7 +41,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="text-align: center; vertical-align: middle;">#</th>
+                                        <th style="text-align: center; vertical-align: middle;">#ID</th>
                                         <th style="text-align: center; vertical-align: middle;">Job Name</th>
                                         <th style="text-align: center; vertical-align: middle;">Action</th>
                                     </tr>
