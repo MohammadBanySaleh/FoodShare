@@ -40,6 +40,7 @@ if (auth()->check()) {
 
     <link href="{{ asset('css/partners.css') }}" rel="stylesheet">
 
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png">
 
     <link href="css/responsive.css" rel="stylesheet" />
 

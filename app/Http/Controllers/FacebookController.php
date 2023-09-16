@@ -39,7 +39,7 @@ class FacebookController extends Controller
 
                 Auth::login($new_user);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/');
 
             }
             
@@ -48,7 +48,7 @@ class FacebookController extends Controller
 
                 Auth::login($finduser);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/');
 
             }
 

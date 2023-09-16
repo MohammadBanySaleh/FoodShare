@@ -19,7 +19,7 @@ class GoogleAuthController extends Controller
     // This function is responsible to handel the call-back url of google authentication
     public function callbackGoogle() 
     {
-        // try{
+        try{
 
             $google_user = Socialite::driver('google')->user();
             // $google_user->getEmail()->first();
@@ -42,7 +42,7 @@ class GoogleAuthController extends Controller
 
                 Auth::login($new_user);
 
-                return redirect()->intended('dashboard');
+                return redirect()->intended('/');
 
             }
             //If user exists in the database
@@ -54,10 +54,10 @@ class GoogleAuthController extends Controller
 
             }
 
-        // } catch(Exception $th){
+        } catch(Exception $th){
 
-        //     dd('Something went wrong! ' . $th->getMessage());
+            dd('Something went wrong! ' . $th->getMessage());
 
-        // }
+        }
     }
 }
