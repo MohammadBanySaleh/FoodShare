@@ -67,6 +67,11 @@
             </div>
         </section>
 
+        {{-- chat button --}}
+        {{-- <div class="fixed-chat-button">
+            <a href="{{ route('chat') }}" target="_self">Chat</a>
+        </div>	 --}}
+
 
         <section class="section-padding">
             <div class="container">
@@ -348,9 +353,8 @@
                                     </div> --}}
                                     {{-- <label>Select Job</label> --}}
                                     <select name="job" class="form-control">
-                                        <option value="" disabled selected>Select Job
-                                            {{-- <svg width="30px" height="30px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#5bc1ac" d="M13.098 8H6.902c-.751 0-1.172.754-.708 1.268L9.292 12.7c.36.399 1.055.399 1.416 0l3.098-3.433C14.27 8.754 13.849 8 13.098 8Z"></path></g></svg> --}}
-                                        </option>
+                                        
+                                        <option value="" disabled selected>Select Job <span style="display:flex; justify-content:end">▼</span></option>
                                         @foreach ($jobs as $item)
                                             <option value="{{ $item->name }}">{{ $item->name }}</option>
                                         @endforeach

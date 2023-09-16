@@ -48,8 +48,8 @@
                                         <th>category_Name</th>
                                         <th>donation_name</th>
                                         <th  style="width: 30%">donation_description</th>
-                                        <th>donation_price</th>
                                         <th>donation_image</th>
+                                        <th>donation_price</th>                                        
                                         <th>Action</th>
                                     </tr>
                                 </thead>

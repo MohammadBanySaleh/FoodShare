@@ -17,9 +17,11 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\VolanteerController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\FacebookController;
 
+use App\Http\Livewire\Chat\CreateChat;
+use App\Http\Livewire\Chat\Main;
 
 use App\Models\UserDonation;
 use Illuminate\Support\Facades\Blade;
@@ -167,3 +169,7 @@ Route::get('main/dashboard', [CustomAuthController::class, 'sidebar'])->middlewa
 Route::get('dashboard_logout', [CustomAuthController::class, 'logout']);
 
 
+
+// Chat
+Route::get('/users', CreateChat::class)->name('users');
+Route::get('/chat/{key?}', Main::class)->name('chat');

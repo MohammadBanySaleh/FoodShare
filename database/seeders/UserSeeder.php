@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
         User::create([
             'name' => 'Abeda',
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
         User::create([
             'name' => 'Salam',
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
         User::create([
             'name' => 'Marah',
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
         User::create([
             'name' => 'Raghad',
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
         User::create([
             'name' => 'Mohammad bany saleh',
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
             'password' => '123456789',
             'mobile' => '0777777777',
             'address' => 'Irbid',
-            'is_logged' => '1',
+            
         ]);
     }
 }
