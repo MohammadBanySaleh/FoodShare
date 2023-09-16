@@ -42,6 +42,18 @@
       <form action="{{ route('dashlog') }}" method="post">
         @csrf
         <div class="input-group mb-3">
+          <input type="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Name" name="name">
+          <div class="input-group-append">
+              <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+              </div>
+          </div>
+          @error('name')
+          <span class="invalid-feedback" role="alert">{{ $message }}</span>
+          @enderror
+      </div>
+
+        <div class="input-group mb-3">
             <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email" name="email">
             <div class="input-group-append">
                 <div class="input-group-text">

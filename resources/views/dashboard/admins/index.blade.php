@@ -35,7 +35,7 @@ Admins list
             <div class="card-header">
                 <!-- Add a link to create a new user -->
                 <a class="btn btn-primary btn-sm float-left" href="{{ route('admins.create') }}">
-                  <i class="fas fa-user-plus"></i> Add New Admin
+                  <i class="fas fa-user-shield nav-icon"></i> Add New Admin
               </a>
             </div>
             <!-- /.card-header -->
@@ -43,7 +43,7 @@ Admins list
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th style="width: 20%">admin_name</th>
                     <th>admin_email</th>
                     {{-- <th>admin_password</th>

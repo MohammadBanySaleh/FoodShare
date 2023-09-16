@@ -43,7 +43,7 @@ Users list
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th>user_name</th>
                     <th>user_email</th>
                     {{-- <th>user_password</th> --}}
@@ -60,7 +60,7 @@ Users list
                   @foreach ($users as $user)
                   <td>{{ $i }}</td>
                   <td>{{ $user->name }}</td>
-                  <td>{{ $user->email }}</td>
+                  <td> <a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
                   {{-- <td>{{ $user->password }}</td> --}}
                   <td>{{ $user->mobile }} </td>
                   <td>{{ $user->address }}</td>
@@ -168,5 +168,9 @@ Users list
       });
     });
   </script>
+
+
+
+
 
 @endsection

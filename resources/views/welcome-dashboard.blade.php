@@ -29,7 +29,7 @@ Control Board
               <p>Our Categories</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fas fa-th nav-icon"></i>
             </div>
             <a href="{{url('dashboard/categories')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -44,7 +44,7 @@ Control Board
               <p>Our Donations</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fas fa-hand-holding-heart nav-icon"></i>
             </div>
             <a href="{{url('dashboard/donations')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -59,7 +59,7 @@ Control Board
               <p>Our Users</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fas fa-users nav-icon"></i>
             </div>
             <a href="{{url('dashboard/users')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
@@ -74,7 +74,7 @@ Control Board
               <p>User's Donations</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fas fa-hand-holding-usd nav-icon"></i>
             </div>
             <a href="{{url('dashboard/user-donations')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>

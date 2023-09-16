@@ -39,6 +39,7 @@ class JobController extends Controller
     {
         $validatedData =  $request->validate([
             'name' => 'required',
+
         ]);
     
         Job::create($validatedData);

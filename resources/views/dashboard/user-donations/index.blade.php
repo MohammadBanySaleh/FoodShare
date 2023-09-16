@@ -30,7 +30,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>#ID</th>
                                         <th>User_Name</th>
                                         <th>Donation_Name</th>
                                     </tr>

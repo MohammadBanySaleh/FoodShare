@@ -30,22 +30,22 @@ Create New volanteer
         <div class="form-group">
           <label  for="email">volanteer email:</label>
           <input type="email" name="email" class="form-control" id="email"  placeholder="Enter volanteer email ">
-          {{-- @error('email') <span class="text-danger">{{ $message }}</span>   @enderror --}}
+          @error('email') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
         <div class="form-group">
           <label  for="job">volanteer job:</label>
           <input type="text" name="job" class="form-control" id="job"  placeholder="Enter volanteer job ">
-          {{-- @error('email') <span class="text-danger">{{ $message }}</span>   @enderror --}}
+          @error('job') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
         <div class="form-group">
           <label  for="comments">volanteer comments:</label>
           <input type="text" name="comments" class="form-control" id="comments"  placeholder="Enter volanteer comments ">
-          {{-- @error('email') <span class="text-danger">{{ $message }}</span>   @enderror --}}
+          @error('comments') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
         <div class="form-group">
           <label  for="mobile">volanteer mobile:</label>
           <input type="text" name="mobile" class="form-control" id="mobile"  placeholder="Enter volanteer mobile ">
-          {{-- @error('email') <span class="text-danger">{{ $message }}</span>   @enderror --}}
+          @error('mobile') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
 
 

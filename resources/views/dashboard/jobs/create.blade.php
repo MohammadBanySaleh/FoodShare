@@ -28,7 +28,7 @@ Create New Job
         </div>
           
         <br>
-        <input type="submit" value="Add Category" class="btn btn-success"><br>
+        <input type="submit" value="Add Job" class="btn btn-success"><br>
       </form>
  
               

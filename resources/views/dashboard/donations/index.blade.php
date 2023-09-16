@@ -36,7 +36,7 @@
                         <div class="card-header">
                             <!-- Add a link to create a new user -->
                             <a class="btn btn-primary btn-sm float-left" href="{{ route('donations.create') }}">
-                                <i class="fas fa-user-plus"></i> Add New Donation
+                                <i class="fas fa-hand-holding-heart nav-icon"></i> Add New Donation
                             </a>
                         </div>
                         <!-- /.card-header -->
@@ -44,7 +44,7 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>#ID</th>
                                         <th>category_Name</th>
                                         <th>donation_name</th>
                                         <th  style="width: 30%">donation_description</th>
@@ -59,40 +59,48 @@
                                             $i = 1;
                                         @endphp
                                         @foreach ($donations as $donation)
+                                        <tr>
                                             <td>{{ $i }}</td>
-                                            <td>{{ $donation->category?->name }}</td>
+                                            <td>
+                                                @if ($donation->category)
+                                                    {{ $donation->category->name }}
+                                                @else
+                                                    No Category
+                                                @endif
+                                            </td>
                                             <td>{{ $donation->name }}</td>
                                             <td>{{ $donation->description }}</td>
                                             <td><img src="{{ asset($donation->image) }}" alt="" width="100px" height="100px"></td>
                                             <td>{{ $donation->price }}</td>
-
-                                            <td class="project-actions">
-                                                <div style="margin-bottom: 5px;">
-                                                    <a class="btn btn-info btn-sm" href="{{ route('donations.edit', $donation->id) }}" style="width: 100%;">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                        Edit
-                                                    </a>
-                                                </div>
                                             
-                                                <div style="margin-bottom: 5px;">
-                                                    <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" style="display: inline;">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this donation?')" style="width: 100%;">
-                                                            <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
-                                                            Delete
-                                                        </button>
-                                                    </form>
-                                                </div>
+                                                <!-- Your edit and delete buttons here -->
+                                                <td class="project-actions">
+                                                    <div style="margin-bottom: 5px;">
+                                                        <a class="btn btn-info btn-sm" href="{{ route('donations.edit', $donation->id) }}" style="width: 100%;">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                
+                                                    <div style="margin-bottom: 5px;">
+                                                        <form action="{{ route('donations.destroy', $donation->id) }}" method="POST" style="display: inline;">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this donation?')" style="width: 100%;">
+                                                                <i class="fas fa-trash"></i> <!-- Add the delete icon here -->
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+
                                             </td>
-                                            
-
-                                            @php
-                                                $i++;
-                                            @endphp
-
-                                    </tr>
+                                        </tr>
+                                        @php
+                                            $i++;
+                                        @endphp
                                     @endforeach
+                                    
                                 </tbody>
                                 <tfoot>
                                 </tfoot>
@@ -191,3 +199,15 @@
     </script>
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+

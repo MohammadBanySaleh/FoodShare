@@ -34,7 +34,7 @@ Volunteers list
             <div class="card-header">
                 <!-- Add a link to create a new user -->
                 <a class="btn btn-primary btn-sm float-left" href="{{ route('volanteers.create') }}">
-                    <i class="fas fa-user-plus"></i> Add New Volunteer
+                    <i class="fas fa-hands-helping nav-icon"></i> Add New Volunteer
                 </a>
             </div>
             <!-- /.card-header -->
@@ -42,7 +42,7 @@ Volunteers list
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th>#ID</th>
                     <th>volanteer_name</th>
                     <th>volanteer_email</th>
                     <th>volanteer_mobile</th>

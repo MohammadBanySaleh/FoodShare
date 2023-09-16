@@ -103,16 +103,16 @@ Route::get('/dashboard_login', function () {
 
 
 
-Route::resource('dashboard/users', UserController::class);
-Route::resource('admins', AdminController::class);
-Route::resource('dashboard/categories', CategoryController::class);
-Route::resource('dashboard/donations', DonationController::class);
-Route::resource('dashboard/jobs', JobController::class);
-Route::resource('dashboard/partners', PartnerController::class);
-Route::resource('paymentdetails', PaymentDetailsController::class);
+Route::resource('dashboard/users', UserController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/admins', AdminController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/categories', CategoryController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/donations', DonationController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/jobs', JobController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/partners', PartnerController::class)->middleware('adminMiddleWare');
+Route::resource('paymentdetails', PaymentDetailsController::class)->middleware('adminMiddleWare');
 Route::resource('dashboard/profiles', ProfileController::class);
-Route::resource('dashboard/user-donations', UserDonationController::class);
-Route::resource('dashboard/volanteers', VolanteerController::class);
+Route::resource('dashboard/user-donations', UserDonationController::class)->middleware('adminMiddleWare');
+Route::resource('dashboard/volanteers', VolanteerController::class)->middleware('adminMiddleWare');
 require __DIR__ . '/auth.php';
 
 
@@ -159,10 +159,11 @@ Route::get('auth/facebook/callback', [FacebookController::class, 'facebookredire
 Route::get('/certificate/download', [UserProfileController::class,'download'])->name('certificate.download');
 
 Route::post('welcome/dashboard', [CustomAuthController::class, 'loginUser'])->name('dashlog');
-// Route::get('welcomedashboard', [CustomAuthController::class, 'loginUser']);
+
 
 Route::get('main/dashboard', [CustomAuthController::class, 'sidebar'])->middleware('adminMiddleWare');
-// Route::get('welcomedashboard', [CustomAuthController::class, 'loginUser']);
+
+
 Route::get('dashboard_logout', [CustomAuthController::class, 'logout']);
-// Route::post('dashboard_logout', [CustomAuthController::class, 'logout'])->name('logout');
+
 

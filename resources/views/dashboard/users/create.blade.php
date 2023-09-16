@@ -1,6 +1,6 @@
 @extends('dashboard.dashboard_layouts.master')
 
-@section('title','Create New Admin')
+@section('title','Create New User')
 
 
 @section('css')
@@ -43,10 +43,18 @@ Create New User
           @error('address') <span class="text-danger">{{ $message }}</span>   @enderror
         </div>
         <div class="form-group">
-            <label  for="admin_password">User Password:</label>
-            <input type="password" name="password" class="form-control" id="password"  placeholder="Enter user password ">
-            @error('password') <span class="text-danger">{{ $message }}</span>   @enderror
-        </div>
+          <label for="password">User Password:</label>
+          <div class="input-group">
+              <input type="password" name="password" class="form-control" id="password" placeholder="Enter user password">
+              <div class="input-group-append">
+                  <button type="button" id="showPassword" class="btn btn-outline-secondary">
+                      <i class="fas fa-eye"></i>
+                  </button>
+              </div>
+          </div>
+          @error('password') <span class="text-danger">{{ $message }}</span>   @enderror
+      </div>
+      
 
         <br>
         <input type="submit" value="Add User" class="btn btn-success"><br>
@@ -60,5 +68,19 @@ Create New User
 @endsection
 
 @section('scripts')
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const passwordInput = document.getElementById('password');
+      const showPasswordButton = document.getElementById('showPassword');
+
+      showPasswordButton.addEventListener('click', function () {
+          if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+          } else {
+              passwordInput.type = 'password';
+          }
+      });
+  });
+</script>
 
 @endsection
