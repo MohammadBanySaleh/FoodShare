@@ -15,6 +15,5 @@ class Controller extends BaseController
 
     public function user(Request $request){
         // $user = User::all();
-       
     }
 }

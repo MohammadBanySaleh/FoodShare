@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\CustomEmail;
 use App\Models\User;
 
-// use Illuminate\Contracts\Mail\CustomEmail;
-
 class EmailController extends Controller
 {
     public function index()

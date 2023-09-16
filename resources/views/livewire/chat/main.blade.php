@@ -36,25 +36,6 @@
             });
         });
 
-        // jQuery
-
-        $(window).resize(function() {
-
-            if (window.innerWidth > 768) {
-                $('.chat_list_container').show();
-                $('.chat_box_container').show();
-
-            }
-
-        });
-
-
-        $(document).on('click', '.return', function() {
-
-            $('.chat_list_container').show();
-            $('.chat_box_container').hide();
-
-        });
     </script>
 
 </div>

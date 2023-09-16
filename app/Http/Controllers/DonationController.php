@@ -11,11 +11,6 @@ use Illuminate\Http\Request;
 
 class DonationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $donations = Donation::get();
@@ -24,11 +19,6 @@ class DonationController extends Controller
         return view('dashboard.donations.index', compact('donations', 'category'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
         $categoryNames = Category::get();
@@ -37,12 +27,6 @@ class DonationController extends Controller
         return view('dashboard.donations.create', compact('categoryNames'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $relativeImagePath = null; // Initialize relativeImagePath as null
@@ -71,12 +55,6 @@ class DonationController extends Controller
         return redirect()->route('donations.index')->with('success', 'Donation created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Donation  $donation
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         if (auth()->check()) {
@@ -124,13 +102,6 @@ class DonationController extends Controller
         return view('pages/sub-category', compact('donations'));
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Donation  $donation
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $donations = Donation::findOrFail($id);
@@ -138,13 +109,6 @@ class DonationController extends Controller
         return view('dashboard.donations.edit', compact('donations'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Donation  $donation
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -165,25 +129,9 @@ class DonationController extends Controller
 
         Donation::where('id', $id)->update($data);
 
-
-        //   if ($request->hasFile('image')) {
-        //       $image = $request->file('image');
-        //       $imageName = time() . '.' . $image->getClientOriginalExtension();
-        //       $image->move(public_path('images'), $imageName); 
-
-        //   }
-
-
-
         return redirect()->route('donations.index')->with('success', 'Donation updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Donation  $donation
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Donation::destroy($id);
