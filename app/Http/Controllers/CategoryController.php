@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $categories=Category::get();
@@ -19,23 +14,12 @@ class CategoryController extends Controller
        return view('dashboard.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('dashboard.categories.create');
         
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     
     {
@@ -49,7 +33,7 @@ class CategoryController extends Controller
         //This line moves the uploaded image file to the specified directory (in this case, public/assets/images) using the generated unique image name.
 
         // Validate and store the new employee record
-      $request->validate([
+        $request->validate([
         'name' => 'required',
         // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,jfif |max:2048',
         'description' => 'required',
@@ -66,23 +50,11 @@ class CategoryController extends Controller
     return redirect()->route('categories.index')->with('success', 'Category created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $categories = Category::findOrFail($id);
@@ -91,20 +63,11 @@ class CategoryController extends Controller
         return view('dashboard.categories.edit', compact('categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-          
         $request->validate([
-          'name' => 'required',
-          'description' => 'required',
-      
+            'name' => 'required',
+            'description' => 'required',
         ]);
         
         $data = $request->except(['_token', '_method']);
@@ -123,25 +86,16 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Category::destroy($id);
         return back()->with('success', 'Category deleted successfully.');
     }
 
-
-
-
     // handle only the image upload part
     //This method takes the request as an argument, generates a unique image name, moves the uploaded image to the specified directory, and returns the relative path to the image. This can be useful if you need to perform image uploads in multiple places within your application and want to reuse the image upload logic.
-public function storeImage($request)
-        {
+    public function storeImage($request)
+    {
         $newImageName = uniqid() . '-' . $request->addedCategoryName . '.' . $request->file('image')->extension();
         $relativeImagePath = 'assets/images/' . $newImageName;
         $request->file('image')->move(public_path('assets/images'), $newImageName);

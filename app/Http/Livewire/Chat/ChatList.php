@@ -48,7 +48,6 @@ class ChatList extends Component
         }
 
         if (isset($request)) {
-
             return $this->receiverInstance->$request;
         }
 

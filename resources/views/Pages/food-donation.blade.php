@@ -1,6 +1,5 @@
-{{-- التبرع العيني --}}
-
 @extends('Layout.master')
+@section('title', 'Food Donation')
 @section('content')
     <ul class="my-3">
         <a href="{{ url()->previous() }}"><svg style="margin-top: -5px;" width="30px" height="30px" viewBox="0 0 24 24"

@@ -115,7 +115,9 @@ if (auth()->check()) {
                                     </g>
                                 </svg>
                                 <span class="bag-notification">
-                                    <small>{{ $unreadMessagesCount }}</small>
+                                    @if ($unreadMessagesCount != 0)
+                                        <small>{{ $unreadMessagesCount }}</small>
+                                    @endif
                                 </span>
                             </a>
                             <div class="dropdown">
@@ -214,7 +216,7 @@ if (auth()->check()) {
                                 <br><br>
                             </div>
                         @else
-                            <h4 class="text-center" style="color: #5bc1ac">"You don't make anu Donation yet, consider
+                            <h4 class="text-center" style="color: #5bc1ac">"You don't make any Donation yet, consider
                                 making a contribution!"</h4 class="text-center"><br>
                             <center><a href="{{ url('/#causes') }}" style="background-color: #5bc1ac; border: none;"
                                     class="btn btn-primary">Donate Now</a></center><br>

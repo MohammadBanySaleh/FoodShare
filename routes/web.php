@@ -19,36 +19,12 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\FacebookController;
-
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Livewire\Chat\Main;
 
 use App\Models\UserDonation;
 use Illuminate\Support\Facades\Blade;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Route::get('/login', function () {
-//     return view('auth/login');
-// })->name('loggin');
-
-// Route::post('/indexxx', function () {
-//     // return view('Pages.sub-category');
-// Route::get('/', function () {
-//     return view('Pages.single');
-// })->name('Pages.single');
-
-// Route::get('/food', function () {
-// });
 Route::get('/money', function () {
     return view('Pages.money-donation');
 });
@@ -56,27 +32,13 @@ Route::get('/money', function () {
 Route::get('/money/{id}', [DonationController::class, 'show'])->middleware(['auth', 'verified'])->name('money.show');
 Route::get('/things/{id}', [DonationController::class, 'shows'])->middleware(['auth', 'verified'])->name('things.show');
 Route::get('/other', [OtherController::class, 'show'])->name('other.show');
-// Route::post('/money', [Controller::class, 'user'])->name('money.store');
 Route::post('/things', [UserDonationController::class, 'update'])->name('food.store');
 Route::post('/money', [UserDonationController::class, 'store'])->name('money.store');
 Route::post('/other', [OtherController::class, 'store'])->name('other.store');
 
-// Route::post('/money', [PaymentDetailsController::class, 'store'])->name('money.store');
 Route::post('paypal/payment', [PaymentDetailsController::class, 'payment'])->name('paypal');
 Route::get('paypal/success', [PaymentDetailsController::class, 'success'])->name('paypal_success');
 Route::get('paypal/cancel', [PaymentDetailsController::class, 'cancel'])->name('paypal_cancel');
-
-// Route::get('/', function(){
-//     return view('auth/login');
-// });
-
-// Route::get('/', function () {
-//     return view('Pages.sub-category');
-//     return view('Pages.index');
-// })->name("indexxx");
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
 
 Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 
@@ -91,13 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-// require __DIR__.'/auth.php';
-
-
-// Route::get('/welcome-dashboard', function () {
-//     return view('welcome-dashboard');
-// })->middleware('adminMiddleWare')->name('welcome-dashboard');
 
 Route::get('/dashboard_login', function () {
     return view('dashboard.dashboard_login');
@@ -121,9 +76,6 @@ require __DIR__ . '/auth.php';
 Route::get('/singleDonation2/{id}', [DonationController::class, 'show2'])->name('singleDonation2');
 Route::get('/singleDonation/{id}', [DonationController::class, 'show3'])->name('singleDonationCoupons');
 
-// Route::get('/subcategory', function () {
-//     return view('Pages.sub-category');
-// });
 Route::get('/subcategory/{id}', [DonationController::class, 'showw'])->name('subcategory');
 
 

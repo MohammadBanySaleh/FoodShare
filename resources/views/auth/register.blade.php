@@ -31,16 +31,15 @@
                         {{-- start name --}}
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"
-                                    :value="__('Name')"></i></label>
-                            <input type="text" name="name" id="name" placeholder="Your Name"
-                                 />
+                                    ></i></label>
+                            <input type="text" name="name" id="name" placeholder="Your Name"/>
                             <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
                         {{-- end name --}}
 
                         {{-- start email --}}
                         <div class="form-group">
-                            <label for="email"><i class="zmdi zmdi-email" :value="__('Email')"></i></label>
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
                             <input type="email" name="email" id="email" placeholder="Your Email"
                                  />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -49,7 +48,7 @@
 
                         {{-- start password --}}
                         <div class="form-group">
-                            <label for="password"><i class="zmdi zmdi-lock" :value="__('Password')"></i></label>
+                            <label for="password"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" id="password" placeholder="Password" name="password"  />
                           <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
@@ -57,7 +56,7 @@
                         {{-- start c password --}}
                         <div class="form-group">
                             <label for="password_confirmation"><i class="zmdi zmdi-lock-outline"
-                                    :value="__('Confirm Password')"></i></label>
+                                   ></i></label>
                             <input type="password" id="password_confirmation" placeholder="Repeat your password"
                                 name="password_confirmation"  />
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
@@ -78,7 +77,7 @@
                 </div>
                 <div class="signup-image">
                     <figure>
-                        <img src="images/reg.png" alt="">
+                        <img src="images/reg2.png" alt="">
                     </figure>
                     <a href="login" class="signup-image-link">Already a member?</a>
                 </div>

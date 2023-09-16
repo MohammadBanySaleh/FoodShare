@@ -14,6 +14,11 @@ class SkipEmailVerificationForGoogleLogin
             return $next($request);
         }
 
+        if (Auth::check() && Auth::user()->hasProvider('facebook')) {
+            // Skip email verification for Google login
+            return $next($request);
+        }
+
         return redirect()->route('verification.notice'); // Redirect to verification page for other users
     }
 }

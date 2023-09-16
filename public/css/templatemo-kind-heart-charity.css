@@ -7,6 +7,21 @@ https://templatemo.com/tm-581-kind-heart-charity
 */
 
 
+.bag-notification {
+  position: relative;
+}
+
+.bag-notification small {
+  padding-top: 2px;
+  font-size: 10px;
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  background-color: red;
+  color: white; 
+  border-radius: 50%;
+  padding: 2px 7px;
+}
 
 @font-face {
     font-family: 'Metropolis';
@@ -97,21 +112,6 @@ h4,
 h5,
 h6 {
   color: var(--dark-color);
-}
-
-.bag-notification {
-  position: relative;
-}
-
-.bag-notification small {
-  font-size: 12px;
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: red;
-  color: white; 
-  border-radius: 50%;
-  padding: 4px 10px;
 }
 
 h1,
@@ -1317,16 +1317,16 @@ blockquote::before {
 -----------------------------------------*/
 .site-footer {
   background-color: var(--site-footer-bg-color);
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .site-footer-bottom {
   background-color: var(--secondary-color);
   position: relative;
   z-index: 2;
-  margin-top: 70px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .site-footer-bottom a {

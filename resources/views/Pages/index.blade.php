@@ -1,6 +1,7 @@
 @extends('Layout.master')
+@section('title', 'FoodSHare')
 @section('content')
-    {{-- {{ auth()->user()->name; }} --}}
+
     <main>
         @if (session('message'))
             <div id="vola_message" class="alert alert-primary">{{ session('message') }}</div>
@@ -17,7 +18,7 @@
                         <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="images/slide/s1.png" class="carousel-image img-fluid" alt="...">
+                                    <img src="images/hero1.jfif" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>be a Kind Heart</h1>
@@ -28,7 +29,7 @@
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="images/slide/jordan-donation.jpg" class="carousel-image img-fluid"
+                                    <img src="images/hero4.jfif" class="carousel-image img-fluid"
                                         alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
@@ -39,7 +40,7 @@
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img src="images/slide/3.jpg" class="carousel-image img-fluid" alt="...">
+                                    <img src="images/hero3.jfif" class="carousel-image img-fluid" alt="...">
 
                                     <div class="carousel-caption d-flex flex-column justify-content-end">
                                         <h1>Humanity</h1>
@@ -66,12 +67,6 @@
                 </div>
             </div>
         </section>
-
-        {{-- chat button --}}
-        {{-- <div class="fixed-chat-button">
-            <a href="{{ route('chat') }}" target="_self">Chat</a>
-        </div>	 --}}
-
 
         <section class="section-padding">
             <div class="container">
@@ -110,17 +105,6 @@
                             </a>
                         </div>
                     </div>
-
-                    {{-- <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
-                                <img src="images/icons/scholarship.png" class="featured-block-image img-fluid"
-                                    alt="">
-
-                                <p class="featured-block-text"><strong>Scholarship</strong> Program</p>
-                            </a>
-                        </div>
-                    </div> --}}
 
                 </div>
             </div>
@@ -162,11 +146,6 @@
             <div class="container">
                 <div class="row">
 
-                    {{-- <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <img src="images/group-people-volunteering-foodbank-poor-people.jpg"
-                            class="custom-text-box-image img-fluid" alt="">
-                    </div > --}}
-
                     <div class="col-lg-6 col-12 mb-lg-0" style="margin-top:5%">
                         <section class="hero hero-section container">
                             <div>
@@ -202,30 +181,6 @@
 
                                 </div>
                             </div>
-
-                            {{-- <div class="col-lg-6 col-md-6 col-12">
-                                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
-                                    <div class="counter-thumb">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="2009"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">Founded</span>
-                                    </div>
-
-                                    <div class="counter-thumb mt-4">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="120"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text">B</span>
-                                        </div>
-
-                                        <span class="counter-text">Donations</span>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
 
@@ -251,47 +206,6 @@
                 </div>
             </div>
         </section>
-
-
-        {{-- <section class="about-section section-padding">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-6 col-md-5 col-12">
-                        <img src="images/portrait-volunteer-who-organized-donations-charity.jpg"
-                            class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-5 col-md-7 col-12">
-                        <div class="custom-text-block">
-                            <h2 class="mb-0">Sandy Chan</h2>
-
-                            <p class="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
-
-                            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional
-                                charity theme based</p>
-
-                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus</p>
-
-                            <ul class="social-icon mt-4">
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-facebook"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-instagram"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section> --}}
 
         <section class="cta-section section-padding section-bg">
             <div class="container">
@@ -344,14 +258,6 @@
                                 </div>
 
                                 <div class="col-lg-6 col-12">
-                                    {{-- <div class="input-group input-group-file">
-                                        <input type="file" class="form-control" id="inputGroupFile02">
-
-                                        <label class="input-group-text" for="inputGroupFile02">Upload your CV</label>
-
-                                        <i class="bi-cloud-arrow-up ms-auto"></i>
-                                    </div> --}}
-                                    {{-- <label>Select Job</label> --}}
                                     <select name="job" class="form-control">
                                         
                                         <option value="" disabled selected>Select Job <span style="display:flex; justify-content:end">▼</span></option>
@@ -386,88 +292,6 @@
                 </div>
             </div>
         </section>
-
-        {{-- <section class="testimonial-section section-padding section-bg">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="mb-lg-3">Happy customers</h2>
-
-                        <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
-
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                            kengan omeg kohm tokito charity theme</h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Maria</span>,
-                                            Boss</small>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                            mauris quis metus tempor orci</h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Thomas</span>,
-                                            Partner</small>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                            kengan omeg kohm tokito charity theme</h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Jane</span>,
-                                            Advisor</small>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                            mauris quis metus tempor orci</h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Bob</span>,
-                                            Entreprenuer</small>
-                                    </div>
-                                </div>
-
-                                <ol class="carousel-indicators">
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
-                                        <img src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg"
-                                            class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                    </li>
-
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
-                                        <img src="images/avatar/portrait-young-redhead-bearded-male.jpg"
-                                            class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                    </li>
-
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
-                                        <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
-                                            class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                    </li>
-
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="3" class="">
-                                        <img src="images/avatar/studio-portrait-emotional-happy-funny.jpg"
-                                            class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                    </li>
-                                </ol>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section> --}}
-
-
 
     </main>
 @endsection

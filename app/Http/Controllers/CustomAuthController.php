@@ -12,9 +12,6 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 
 
-
-
-
 class CustomAuthController extends Controller
 {
     public function login(){
@@ -34,8 +31,6 @@ class CustomAuthController extends Controller
                 'required',
                 'min:8',
                 // 'regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'
-
-                
             ]
         ]);
         
@@ -63,42 +58,31 @@ class CustomAuthController extends Controller
         } else {
             return back()->with('fail', 'This email is not registered');
         }
-        
-         
-
-      
 
     }
-    // public function home(){
-    //     // return view('home');
-    //     $data=array();
-
-    //     if(Session::has ('id'))
-    //     {
-    //         $data=admin::where('id','=',Session::get ('id'))->first();
-    //     }
-    //     return view('home',compact('data'));
-    // }
-    public function logout(){
+    
+    public function logout()
+    {
         if (Session::has ('id')){
             Session::pull('id');
         }
         return view ('dashboard.dashboard_login'); // Redirect to the login page after logout.
     }
 
-    public function sidebar(){
+    public function sidebar()
+    {
         $categoryCount = Category::count();
-                $userCount = User::count();
-                $DonationCount = Donation::count();
-                $UserDonationCount = UserDonation::count();
-                // dd($categoryCount);
+        $userCount = User::count();
+        $DonationCount = Donation::count();
+        $UserDonationCount = UserDonation::count();
+        // dd($categoryCount);
                 
-                return view('welcome-dashboard', [
-                    'categoryCount' => $categoryCount,
-                    'userCount' => $userCount,
-                    'DonationCount' => $DonationCount,
-                    'UserDonationCount' => $UserDonationCount
-                ]);
+        return view('welcome-dashboard', [
+        'categoryCount' => $categoryCount,
+        'userCount' => $userCount,
+        'DonationCount' => $DonationCount,
+        'UserDonationCount' => $UserDonationCount
+        ]);
     }
-    
+
 }
